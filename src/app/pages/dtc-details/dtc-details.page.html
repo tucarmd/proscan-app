@@ -1,0 +1,56 @@
+<ion-content class="ion-padding">
+  <h3 class="mt-5 mb-3" *ngIf="MilDTC">MIL DTC</h3>
+  <ion-list class="app-dtc-details" *ngIf="MilDTC">
+    <ion-list-header>Stored</ion-list-header>
+    <ion-item lines="none">
+      <div class="pt-3">
+        <h4>{{MilDTC.code}}</h4>
+        <p class="mb-4" innerHTML="{{MilDTC.definition}}"></p>
+      </div>
+    </ion-item>
+  </ion-list>
+  <h3 class="mt-5 mb-3" *ngIf="DisplayOBDCodes">Other OBD DTC Codes</h3>
+  <ion-list class="app-dtc-details" *ngIf="DisplayOBDCodes && StoredCodes && StoredCodes.length">
+    <ion-list-header>Stored</ion-list-header>
+    <ion-item lines="none" *ngFor="let dtc of StoredCodes">
+      <div class="pt-3">
+        <h4>{{dtc.code}}</h4>
+        <p class="mb-4" innerHTML="{{dtc.definition}}"></p>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-list class="app-dtc-details" *ngIf="DisplayOBDCodes && PendingCodes && PendingCodes.length">
+    <ion-list-header>Pending</ion-list-header>
+    <ion-item lines="none" *ngFor="let dtc of PendingCodes">
+      <div class="pt-3">
+        <h4>{{dtc.code}}</h4>
+        <p class="mb-4" innerHTML="{{dtc.definition}}"></p>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-list class="app-dtc-details" *ngIf="DisplayOBDCodes && PermanentCodes && PermanentCodes.length">
+    <ion-list-header>Permanent</ion-list-header>
+    <ion-item lines="none" *ngFor="let dtc of PermanentCodes">
+      <div class="pt-3">
+        <h4>{{dtc.code}}</h4>
+        <p class="mb-4" innerHTML="{{dtc.definition}}"></p>
+      </div>
+    </ion-item>
+  </ion-list>
+  <h3 class="mt-5 mb-3" *ngIf="ModuleName">{{ModuleName}} DTCs</h3>
+  <ion-list class="app-dtc-details" *ngFor="let object of Dtcs | groupBy:'type'">
+    <ion-list-header *ngIf="object.key">{{object.key}}</ion-list-header>
+    <ion-list-header *ngIf="!object.key || object.key === null">N/A</ion-list-header>
+    <ion-item lines="none" *ngFor="let dtc of object.value">
+      <div class="pt-3">
+        <h4>{{dtc.code}}</h4>
+        <p class="mb-4" innerHTML="{{dtc.definition}}"></p>
+      </div> 
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer class="ion-no-border p-2">
+  <ion-toolbar class="py-1">
+    <ion-button class="app-button" expand="block" (click)="backToReportPage()">Close</ion-button>
+  </ion-toolbar>
+</ion-footer>

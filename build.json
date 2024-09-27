@@ -1,0 +1,19 @@
+{
+  "android": {
+    "release": {
+      "keystore": "com.carmd.proscan2.jks",
+      "storePassword": "CarMD1234",
+      "alias": "carmdupload",
+      "password" : "CarMD1234",
+      "keystoreType": ""
+    }
+  },
+  "ios": {
+    "debug": {
+        "codeSignIdentitiy": "iPhone Developer",
+        "developmentTeam":"S9S8JXEXXT",
+        "provisioningProfile": "fb24884f-6c7e-41c7-a505-0c59ae301a04",
+        "packageType": "development"
+    }
+  }
+}

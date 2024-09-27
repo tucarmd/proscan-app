@@ -1,0 +1,90 @@
+import * as enumGlobal from './../standard/enums_Global'
+
+export function enumProtocolToString(eprotocol) {
+    switch (eprotocol) {
+        case enumGlobal.enumProtocol.eprotocol_UNKNOWN: return "UNKNOWN";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_NO: return "Protocol NO";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_VPW: return "Protocol VPW";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_PWM: return "Protocol PWM";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_ISO9141: return "Protocol ISO9141";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_KW2000: return "Protocol KW2000";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CAN500KBAUD: return "Protocol CAN500KBAUD";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_XCAN500KBAUD: return "Protocol XCAN500KBAUD";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CAN250KBAUD: return "Protocol CAN250KBAUD";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_XCAN250KBAUD: return "Protocol XCAN250KBAUD";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_BOSCH: return "Protocol BOSCH";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_10: return "Protocol RESERVE 10";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_11: return "Protocol RESERVE 11";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_12: return "Protocol RESERVE 12";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_13: return "Protocol RESERVE 13";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_14: return "Protocol RESERVE 14";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_KW: return "Protocol KW";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_KW1281: return "Protocol KW1281";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_MUT: return "Protocol MUT";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CAN_C_UDS: return "Protocol CAN C UDS";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CAN_I_UDS: return "Protocol CAN I UDS";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_20: return "Protocol RESERVE_20";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CCD2: return "Protocol CCD2";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_SDL: return "Protocol SDL";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_UBP: return "Protocol UBP";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_MCAN: return "Protocol MCAN";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_MCAN_____UDS: return "Protocol MCAN UDS";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_H99B: return "Protocol H99B";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_95HM: return "Protocol 95HM";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_92HM: return "Protocol 92HM";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CAN: return "Protocol CAN";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_30: return "Protocol RESERVE_30";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_31: return "Protocol RESERVE 31";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CCD: return "Protocol CCD";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_SCI: return "Protocol SCI";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_34: return "Protocol RESERVE 34";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_35: return "Protocol RESERVE 35";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_36: return "Protocol RESERVE 36";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_37: return "Protocol RESERVE 37";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_38: return "Protocol RESERVE 38";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_39: return "Protocol RESERVE 39";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_40: return "Protocol RESERVE 40";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_41: return "Protocol RESERVE 41";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_OBD1: return "Protocol OBD1";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_43: return "Protocol RESERVE_43";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_44: return "Protocol RESERVE_44";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_45: return "Protocol RESERVE_45";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_46: return "Protocol RESERVE_46";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_47: return "Protocol RESERVE_47";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_DDL1: return "Protocol DDL1";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_SWCAN: return "Protocol SWCAN";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_50: return "Protocol RESERVE_50";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_MB_ISO: return "Protocol MB_ISO";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_KWFB: return "Protocol KWFB";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_BMW_CAN: return "Protocol BMW_CAN";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_TPCAN_2_0: return "Protocol TPCAN_2_0";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_TPCAN_1_6_KW1281: return "Protocol TPCAN 1.6 KW1281";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_TPCAN_1_6_KW2000: return "Protocol TPCAN 1.6 KW2000";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_KWSSM: return "Protocol KWSSM";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_DDL2: return "Protocol DDL2";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_DS2: return "Protocol DS2";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CAN_UDS: return "Protocol CAN UDS";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CANUDS: return "Protocol CAN UDS";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CAN_D2: return "Protocol CAN D2";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CAN_GGD: return "Protocol CAN GGD";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_ALDL: return "Protocol ALDL";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_GMLAN: return "Protocol GMLAN";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_MAX: return "Protocol MAX";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_CAN_C: return "Protocol CAN C";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_TCAN: return "Protocol TCAN";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_DS1: return "Protocol DS1";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_DS2_MID: return "Protocol DS2 MID";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_D2: return "Protocol D2";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_GGD: return "Protocol GGD";
+        case enumGlobal.enumProtocol.eprotocol_Suzuki_SDL: return "Protocol SDL";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_76: return "Protocol RESERVE 76";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_77: return "Protocol RESERVE 77";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_78: return "Protocol RESERVE 78";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_79: return "Protocol RESERVE 79";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_RESERVE_80: return "Protocol RESERVE 80";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_J1708: return "Protocol J1708";
+        case enumGlobal.enumProtocol.eprotocol_PROTOCOL_J1939: return "Protocol J1939";
+        default:
+            return "NA"
+    }
+}

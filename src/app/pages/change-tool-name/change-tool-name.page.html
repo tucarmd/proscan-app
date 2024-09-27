@@ -1,0 +1,29 @@
+<ion-content class="ion-padding">
+  <div class="app-content-center-midle">
+    <div class="text-center" [hidden]="!isScanning">
+      <h2>Scanning devices...</h2>
+      <div class="app-spinner-wrap">
+        <ion-spinner name="circles" class="size-8"></ion-spinner>
+      </div>
+      <p class="font-size-20 mb-5">Starting scan</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-center" (click)="cancel()">
+            <a class="text-secondary font-size-18">Cancel</a>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="text-center w-100 app-select-device-box px-3 py-4" *ngIf="devices && devices.length > 0">
+      <h2 class="mb-5">Please select device <br/>to change Tool Name</h2>
+      <ion-button class="app-button mb-5" expand="block" *ngFor="let device of devices" (click)="selectDevice(device)">{{device.displayName}}</ion-button>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-center" (click)="cancel()">
+            <a class="text-white font-size-18">Cancel</a>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

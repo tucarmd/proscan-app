@@ -1,0 +1,123 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar [color]="incompleteReport ? 'danger' : 'secondary'" mode="md" *ngIf="isAndroid">
+    <ion-title style="color: white;">{{incompleteReport}}Report</ion-title>
+  </ion-toolbar>
+  <ion-toolbar [color]="incompleteReport ? 'danger' : 'secondary'" mode="ios" *ngIf="!isAndroid">
+    <ion-title style="color: white;">{{incompleteReport}}Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list class="app-report-history py-3">
+    <ion-item lines="none">Report ID:<ion-label>{{ReportNumber}}</ion-label>
+    </ion-item>
+    <ion-item lines="none">Work Order Number:<ion-label>{{WorkOrderNumber}}</ion-label>
+    </ion-item>
+    <ion-item lines="none">Vehicle:<ion-label>{{VehicleName}}</ion-label>
+    </ion-item>
+    <ion-item lines="none">VIN:<ion-label>{{VIN}}</ion-label>
+    </ion-item>
+    <ion-item lines="none">Mileage:<ion-label>{{Mileage | number}}</ion-label>
+    </ion-item>
+    <ion-item lines="none">Active Modules:<ion-label>{{ModulesScannedCount}}</ion-label>
+    </ion-item>
+    <ion-item lines="none">Total DTC Count:<ion-label>{{TotalDTCCount}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- Powertrain Codes -->
+  <ion-item lines="none" class="ion-no-padding" *ngIf="PowertrainCodes">
+    <ion-grid class="app-grid-table">
+      <ion-row class="app-grid-th">
+        <ion-col size="{{showButtonEraseDtcs ? 6 : 8}}">OBD DTC Codes</ion-col>
+        <ion-col size="2" class="ion-text-center">DTC</ion-col>
+        <ion-col style="padding-left: 0; padding-right: 0;" size="2" class="ion-text-center">Details</ion-col>
+        <ion-col style="padding-left: 0; padding-right: 0;" size="2" class="ion-text-center"
+          *ngIf="showButtonEraseDtcs">Erase</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="{{showButtonEraseDtcs ? 6 : 8}}">MIL DTC</ion-col>
+        <ion-col size="2" class="ion-text-center">{{PowertrainCodes.primaryCode ? 1 : 0}}</ion-col>
+        <ion-col size="2" class="ion-text-center">
+          <ion-icon *ngIf="PowertrainCodes.primaryCode" (click)="viewMilDtc(PowertrainCodes.primaryCode)"
+            src="assets/svg/info.svg" class="font-size-25"></ion-icon>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center" *ngIf="showButtonEraseDtcs && !isErasedOBDDtcs">
+          <ion-icon *ngIf="PowertrainCodes.primaryCode" class="icon-proscan-delete font-size-25"
+            src="assets/svg/delete.svg" (click)="eraseDtcs(0, '', 0, 0, true)"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="{{showButtonEraseDtcs ? 6 : 8}}">Other OBD DTC Codes</ion-col>
+        <ion-col size="2" class="ion-text-center">{{totalOBDCodes}}</ion-col>
+        <ion-col size="2" class="ion-text-center">
+          <ion-icon *ngIf="totalOBDCodes > 0" (click)="viewObdDtcs()" src="assets/svg/info.svg"
+            class="font-size-25"></ion-icon>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center" *ngIf="showButtonEraseDtcs && !isErasedOBDDtcs">
+          <ion-icon *ngIf="totalOBDCodes > 0" class="icon-proscan-delete font-size-25" src="assets/svg/delete.svg"
+            (click)="eraseDtcs(0, '', 0, 0, true)"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <!-- Begin table -->
+  <ion-item lines="none" class="ion-no-padding" *ngIf="ModulesWithDTC && ModulesWithDTC.length > 0">
+    <ion-grid class="app-grid-table">
+      <ion-row class="app-grid-th">
+        <ion-col size="{{showButtonEraseDtcs ? 6 : 8}}">Failed Modules</ion-col>
+        <ion-col size="2" class="ion-text-center">DTC</ion-col>
+        <ion-col style="padding-left: 0; padding-right: 0;" size="2" class="ion-text-center">Details</ion-col>
+        <ion-col style="padding-left: 0; padding-right: 0;" size="2" class="ion-text-center"
+          *ngIf="showButtonEraseDtcs">Erase</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let module of ModulesWithDTC">
+        <ion-col size="{{showButtonEraseDtcs ? 6 : 8}}" *ngIf="!module.isErased">{{module.name}}</ion-col>
+        <ion-col size="{{showButtonEraseDtcs ? 6 : 8}}" *ngIf="module.isErased"><span
+            style="color: gray">{{module.name}}</span></ion-col>
+        <ion-col size="2" class="ion-text-center">{{module.dtcCount}}</ion-col>
+        <ion-col size="2" class="ion-text-center">
+          <ion-icon *ngIf="module.dtcCount > 0" (click)="viewDtcDetails(module.id)" src="assets/svg/info.svg"
+            class="font-size-25"></ion-icon>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center" *ngIf="showButtonEraseDtcs">
+          <ion-icon *ngIf="module.dtcCount > 0 && !module.isErased" class="icon-proscan-delete font-size-25"
+            src="assets/svg/delete.svg"
+            (click)="eraseDtcs(module.id, module.name, module.system, module.subSystem, false)"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <div class="mt-2 mb-4-01">
+    <ion-button *ngIf="ModulesWithoutDTC && ModulesWithoutDTC.length > 0" (click)="viewModulesWithoutDTC();"
+      type="button" class="app-button w-100">{{btnViewModulesText}}</ion-button>
+  </div>
+  <!-- table 02 -->
+  <ion-item lines="none" class="ion-no-padding" *ngIf="isViewModulesWithoutDTC">
+    <ion-grid class="app-grid-table">
+      <ion-row class="app-grid-th">
+        <ion-col size="9">System</ion-col>
+        <ion-col size="3" class="ion-text-center">DTC</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let module of ModulesWithoutDTC">
+        <ion-col size="9">{{module.name}}</ion-col>
+        <ion-col size="3" class="ion-text-center">0</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <div class="mt-2 mb-4-01" *ngIf="isErased">
+    <ion-button (click)="rescan();" type="button" class="app-button w-100">Rescan</ion-button>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border p-2">
+  <ion-toolbar class="py-1">
+    <ion-grid>
+      <ion-row class="text-center">
+        <ion-col>
+          <ion-button type="submit" (click)="done()" class="app-button" expand="block">Done</ion-button>
+        </ion-col>
+        <ion-col *ngIf="!fromHistoryPage">
+          <ion-button class="app-button" color="danger" expand="block" (click)="eraseAllDtcs()">Erase All</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

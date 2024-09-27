@@ -1,0 +1,60 @@
+<ion-content class="ion-padding" scroll-y="false">
+  <div class="app-content-center-midle">
+    <div class="w-100 px-3">
+      <form [formGroup]="homeForm" (ngSubmit)="homeForm.valid && doScanVehicle($event)">
+        <p class="app-form-logo">
+          <img src="assets/img/its-logo.png" alt="Innova Telematics Solutions" />
+        </p>
+        <p class="mb-4">
+          <ion-input class="app-input mb-2" type="text" placeholder="Work Order Number" formControlName="workOrderNo"
+            name="workOrderNo" maxlength="10"></ion-input>
+        </p>
+        <p class="mb-4">
+          <ion-input formControlName="mileage" class="app-input mb-2" type="tel" placeholder="Mileage" pattern="[0-9]*"
+            name="mileage" maxlength="6" required></ion-input>
+          <span *ngIf="formSubmitted">
+            <span *ngIf="homeForm.controls.mileage.invalid" class="text-danger">Mileage is required.</span>
+          </span>
+        </p>
+        <p class="mb-4">
+          <ion-button class="app-button" expand="block" type="submit" [disabled]="isLoading"
+            (click)="formSubmitted = true">
+            <ion-spinner [hidden]="!isLoading" class="app-sign-up-spinner"></ion-spinner>
+            <span [hidden]="isLoading" class="button-inner">Start Scan</span>
+          </ion-button>
+        </p>
+        <p class="mb-4">
+          <ion-button class="app-button" expand="block" (click)="viewPastReports()">Past Reports</ion-button>
+        </p>
+      </form>
+
+      <div class="text-center">
+        <p>
+          <a class="no-line font-size-16" (click)="lookupDlc()">Look up DLC?</a>
+        </p>
+        <p>
+          <a class="no-line font-size-16" (click)="viewTutorial()">Tutorial</a>
+        </p>
+        <p>
+          <a class="no-line font-size-16" (click)="changeToolName()">Change Tool Name</a>
+        </p>
+        <p>
+          <a class="no-line font-size-16" (click)="viewLogs()" *ngIf="isTesting">View Logs</a>
+        </p>
+        <p *ngIf="softwareVersion">
+          Software Version: {{softwareVersion}}
+        </p>
+        <p *ngIf="firmwareVersion">
+          Firmware Version: {{firmwareVersion}}
+        </p>
+        <p *ngIf="isTesting" class="mb-3">Testing Version</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border p-2">
+  <ion-toolbar class="py-1" [hidden]="isKeyboardShow">
+    <p class="text-center" (click)="doLogout()"><a class="no-line font-size-18">Log Out</a></p>
+  </ion-toolbar>
+</ion-footer>

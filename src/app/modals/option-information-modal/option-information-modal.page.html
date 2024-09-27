@@ -1,0 +1,18 @@
+<div class="app-dismiss" (click)="dismiss()"></div>
+<ion-card class="app-modal-middle" *ngIf="optionInformation">
+  <ion-item lines="none" class="bg-secondary">
+    <ion-card-header class="pl-0 app-poppins-medium text-white">
+      {{optionInformation.option}}
+    </ion-card-header>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()" class="text-black">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <ion-card-content>
+    <p class="mb-3 app-poppins-semi-bold" [innerHTML]="optionInformation.description"></p>
+    <p *ngIf="optionInformation.image" class="text-center app-vehicle-selection-img"><img
+        src="{{optionInformation.image}}" alt=""></p>
+  </ion-card-content>
+</ion-card>

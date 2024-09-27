@@ -1,0 +1,4559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<title>Innova VCI Service</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="article data-line-1">
+<div id="header">
+<h1>Innova VCI Service</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph data-line-3">
+<p>Source code of this service content in folder: innova-vci-service</p>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-10">
+<h2 id="_author">1. Author</h2>
+<div class="sectionbody">
+<div class="literalblock data-line-11">
+<div class="content">
+<pre>Hung Vo &lt;hungtv@vn.innova.com&gt;
+Quoc Do &lt;quocmd@vn.innova.com&gt;
+Nguyen Pham &lt;nguyencp@vn.innova.com&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-15">
+<h2 id="_revision">2. Revision</h2>
+<div class="sectionbody">
+<div class="paragraph data-line-17">
+<p>Version: 1.0</p>
+</div>
+<div class="paragraph data-line-19">
+<p>Version Date: Jun 15,2019</p>
+</div>
+<div class="paragraph data-line-21">
+<p>Version Notes: First Release for Innova VCI Service</p>
+</div>
+<div class="paragraph data-line-23">
+<p>Version: 1.2RC1</p>
+</div>
+<div class="paragraph data-line-25">
+<p>Version Date: Jul 21,2019</p>
+</div>
+<div class="paragraph data-line-27">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-29">
+<div class="content">
+<pre># Update
+getVersion
+getBatteryVoltage
+obd2RetriveData : read service 9
+# report method obd2
+getVehReport_YMME_PROFILE
+getVehReport_OBD2_LD_SID1_BUFF
+getVehReport_OBD2_FF_SID2_BUFF
+getVehReport_OBD2_DTC_SID37A_BUFF
+getVehReport_OBD2_SPECIALTEST_SID568_BUFF
+getVehReport_OBD2_VEHINFO_SID9_BUFF
+getVehReport_OBD2_RECORED_LD_BUFF</pre>
+</div>
+</div>
+<div class="paragraph data-line-42">
+<p>Version: 1.3</p>
+</div>
+<div class="paragraph data-line-44">
+<p>Version Date: August 02,2019</p>
+</div>
+<div class="paragraph data-line-46">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-48">
+<div class="content">
+<pre># Update
+add link_OBD2_SPECIALTEST_SID5
+add link_OBD2_SPECIALTEST_SID6
+add link_OBD2_SPECIALTEST_SID8
+add getVehReport_OBD2_SPECIALTEST_SID5_BUFF
+add getVehReport_OBD2_SPECIALTEST_SID6_BUFF
+add getVehReport_OBD2_SPECIALTEST_SID8_BUFF
+remove getVehReport_OBD2_SPECIALTEST_SID568_BUFF
+Update ofm features, MIL Status and Drive Cycle</pre>
+</div>
+</div>
+<div class="paragraph data-line-58">
+<p>Version: 1.4</p>
+</div>
+<div class="paragraph data-line-60">
+<p>Version Date: Oct 01,2019</p>
+</div>
+<div class="paragraph data-line-62">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-64">
+<div class="content">
+<pre># Update
+add features using screen form (Special Test and Actuator Test)
+add erase OBD2</pre>
+</div>
+</div>
+<div class="paragraph data-line-68">
+<p>Version: 1.5</p>
+</div>
+<div class="paragraph data-line-70">
+<p>Version Date: Oct 22,2019</p>
+</div>
+<div class="paragraph data-line-72">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-74">
+<div class="content">
+<pre># Update
+add features using screen form (Oil Reset, Battery Reset, Steering Angle Sensor Calibration, Electric Parking Brake, ABS Bleeding)
+update new response of nwscan_LinkSystem
+add nwscan_getdtcdef to get dtc definition
+update live data functions
+add tool setting</pre>
+</div>
+</div>
+<div class="paragraph data-line-81">
+<p>Version: 1.6</p>
+</div>
+<div class="paragraph data-line-83">
+<p>Version Date: Nov 11,2019</p>
+</div>
+<div class="paragraph data-line-85">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-87">
+<div class="content">
+<pre># Update
+Update introduction of USB serial and bluetooth
+Update progress bar process
+Update command get information of Live Data item (Max val, Min Val, and Unit)</pre>
+</div>
+</div>
+<div class="paragraph data-line-92">
+<p>Version: 1.7</p>
+</div>
+<div class="paragraph data-line-94">
+<p>Version Date: Dec 07,2019</p>
+</div>
+<div class="paragraph data-line-96">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-98">
+<div class="content">
+<pre># Update
+Update itemlist of OBD2, ABS, SRS LiveData
+Update Hybrid LiveData
+Update enable and disable DTC trigger function</pre>
+</div>
+</div>
+<div class="paragraph data-line-103">
+<p>Version: 1.8</p>
+</div>
+<div class="paragraph data-line-105">
+<p>Version Date: Jan 08,2020</p>
+</div>
+<div class="paragraph data-line-107">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-109">
+<div class="content">
+<pre># Update
+Update service reset functions, battery alternator health check</pre>
+</div>
+</div>
+<div class="paragraph data-line-112">
+<p>Version: 1.8RC2</p>
+</div>
+<div class="paragraph data-line-114">
+<p>Version Date: Jan 20,2020</p>
+</div>
+<div class="paragraph data-line-116">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-118">
+<div class="content">
+<pre># Update
+Update OBD2 readable functions
+getVehReport_YMME_String
+getVehReport_MonitorIconStatus
+getVehReport_FreezeFrameDTCInfo
+getVehReport_FreezeFrameLDInfo
+getVehReport_OBD2_DTC_Info
+getVehReport_OBD2_DTC_Def
+getVehReport_OBD2_VehicleInfo_SID9</pre>
+</div>
+</div>
+<div class="paragraph data-line-128">
+<p>Version: 1.9</p>
+</div>
+<div class="paragraph data-line-130">
+<p>Version Date: Feb 12,2020</p>
+</div>
+<div class="paragraph data-line-132">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-134">
+<div class="content">
+<pre># Update
+Update Fast Cancel</pre>
+</div>
+</div>
+<div class="paragraph data-line-137">
+<p>Version: 1.10</p>
+</div>
+<div class="paragraph data-line-139">
+<p>Version Date: Apr 29,2020</p>
+</div>
+<div class="paragraph data-line-141">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-143">
+<div class="content">
+<pre># Update
+Update Doc</pre>
+</div>
+</div>
+<div class="paragraph data-line-146">
+<p>Version: 1.10RC2</p>
+</div>
+<div class="paragraph data-line-148">
+<p>Version Date: Jun 03,2020</p>
+</div>
+<div class="paragraph data-line-150">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-152">
+<div class="content">
+<pre># Update
+Update obd2QuickRetriveData, obd2QuickLink</pre>
+</div>
+</div>
+<div class="paragraph data-line-155">
+<p>Version: 1.11</p>
+</div>
+<div class="paragraph data-line-157">
+<p>Version Date: Jul 20,2020</p>
+</div>
+<div class="paragraph data-line-159">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-161">
+<div class="content">
+<pre># Update
+Update readGUID, writeGUID in OBD Tool</pre>
+</div>
+</div>
+<div class="paragraph data-line-164">
+<p>Version: 1.12</p>
+</div>
+<div class="paragraph data-line-166">
+<p>Version Date: Aug 17,2020</p>
+</div>
+<div class="paragraph data-line-168">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-170">
+<div class="content">
+<pre># Update
+Update check ECU Voltage to break OBD2Query</pre>
+</div>
+</div>
+<div class="paragraph data-line-173">
+<p>Version: 1.12RC1</p>
+</div>
+<div class="paragraph data-line-175">
+<p>Version Date: Sep 06,2020</p>
+</div>
+<div class="paragraph data-line-177">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-179">
+<div class="content">
+<pre># Update
+Update VCI Logging Data functions</pre>
+</div>
+</div>
+<div class="paragraph data-line-182">
+<p>Version: 1.12RC2</p>
+</div>
+<div class="paragraph data-line-184">
+<p>Version Date: Oct 06,2020</p>
+</div>
+<div class="paragraph data-line-186">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-188">
+<div class="content">
+<pre># Update
+Update doc GUI process with keep alive and finish response from VCI</pre>
+</div>
+</div>
+<div class="paragraph data-line-191">
+<p>Version: 1.14</p>
+</div>
+<div class="paragraph data-line-193">
+<p>Version Date: Oct 08,2020</p>
+</div>
+<div class="paragraph data-line-195">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-197">
+<div class="content">
+<pre># Update
+Update ECM Live Data</pre>
+</div>
+</div>
+<div class="paragraph data-line-200">
+<p>Version: 1.15</p>
+</div>
+<div class="paragraph data-line-202">
+<p>Version Date: Jan 28 2021</p>
+</div>
+<div class="paragraph data-line-204">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-206">
+<div class="content">
+<pre># Update
+Support Live Data with up to 1000 Pids . Please see the new update in R&amp;D app tab7.page.ts</pre>
+</div>
+</div>
+<div class="paragraph data-line-209">
+<p>Version: 1.16</p>
+</div>
+<div class="paragraph data-line-211">
+<p>Version Date: Apr 16 2021</p>
+</div>
+<div class="paragraph data-line-213">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-215">
+<div class="content">
+<pre># Update
+Fix issue get_itemval using livedata v2 support 1000 pids</pre>
+</div>
+</div>
+<div class="paragraph data-line-218">
+<p>Version: 1.16RC1</p>
+</div>
+<div class="paragraph data-line-220">
+<p>Version Date: May 07 2021</p>
+</div>
+<div class="paragraph data-line-222">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-224">
+<div class="content">
+<pre># Update
+Add productid ST VCI FS 0x2D5</pre>
+</div>
+</div>
+<div class="paragraph data-line-227">
+<p>Version: 1.16RC2</p>
+</div>
+<div class="paragraph data-line-229">
+<p>Version Date: Sep 16 2021</p>
+</div>
+<div class="paragraph data-line-231">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-233">
+<div class="content">
+<pre># Update
+Update new gui_set_key_option in GUI using new command gui_set_key_with_index:21</pre>
+</div>
+</div>
+<div class="paragraph data-line-236">
+<p>Version: 1.16RC3</p>
+</div>
+<div class="paragraph data-line-238">
+<p>Version Date: Jan 18 2022</p>
+</div>
+<div class="paragraph data-line-240">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-242">
+<div class="content">
+<pre># Update
+Update document for YMME manual selection</pre>
+</div>
+</div>
+<div class="paragraph data-line-245">
+<p>Version: 1.16RC4</p>
+</div>
+<div class="paragraph data-line-247">
+<p>Version Date: Apr 20 2022</p>
+</div>
+<div class="paragraph data-line-249">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-251">
+<div class="content">
+<pre># Update
+Update Erase DTC support negative response return result Error Code
+Add retreiveFFDTCMonData, retreiveDTCData, obd2FFDTCMonLink, obd2DTCLink</pre>
+</div>
+</div>
+<div class="paragraph data-line-255">
+<p>Version: 1.16RC6</p>
+</div>
+<div class="paragraph data-line-257">
+<p>Version Date: Jun 23 2022</p>
+</div>
+<div class="paragraph data-line-259">
+<p>Version Notes:</p>
+</div>
+<div class="literalblock data-line-261">
+<div class="content">
+<pre>  # Update
+add Smog Check I/M program function: getting_ledstatus, getting_smogcheckstate, getting_smogcheckcountry
+add get fuel type &amp; get vehicle type function: getting_vehtype, getting_fueltype</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-265">
+<h2 id="_scope">3. Scope</h2>
+<div class="sectionbody">
+<div class="paragraph data-line-266">
+<p>Handle USB Communication. This service will handle Vehicle communication via USB</p>
+</div>
+<div class="paragraph data-line-268">
+<p>Support Handle process :</p>
+</div>
+<div class="literalblock data-line-270">
+<div class="content">
+<pre>OBD2 Auto link
+OEM Pid (Odometer , Fuel Level ... )
+Network Scan
+Service Reset
+Live Data</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-276">
+<h2 id="_dependency">4. Dependency</h2>
+<div class="sectionbody">
+<div class="literalblock data-line-278">
+<div class="content">
+<pre>"devDependencies": {
+    "buffer": "^5.2.1",
+    "lodash": "^4.17.11",
+    "@ionic-native/serial": "^5.3.0"
+    "@ionic-native/bluetooth-serial": "^5.15.0",
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-286">
+<h2 id="_obd_tool">5. OBD Tool</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-288">
+<h3 id="_methods">5.1. Methods</h3>
+<div class="sect3 data-line-290">
+<h4 id="_getversion">5.1.1. getVersion</h4>
+<div class="literalblock data-line-292">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;{productid,main,boot,apiVersion}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-295">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-297">
+<div class="content">
+<pre>return json as format {"productid":720,"main":"V01.12.03","boot":"V01.07.01","apiVersion":"1.2"}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-299">
+<h4 id="_getbatteryvoltage">5.1.2. getBatteryVoltage</h4>
+<div class="literalblock data-line-301">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;{BatteryVoltage,Unit}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-304">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-306">
+<div class="content">
+<pre>read battery voltage , return json format {"BatteryVoltage":11.91,"Unit":"V"}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-308">
+<h4 id="_cancel_process">5.1.3. cancel_process</h4>
+<div class="admonitionblock tip data-line-309">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Use this function to fast cancel processing
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-311">
+<div class="content">
+<pre>@input : none
+@return : none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-314">
+<h4 id="_readguid">5.1.4. readGUID</h4>
+<div class="admonitionblock tip data-line-315">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Function to read GUID
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-317">
+<div class="content">
+<pre>@input : none
+@return : string of GUID</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-320">
+<h4 id="_writeguid">5.1.5. writeGUID</h4>
+<div class="admonitionblock tip data-line-321">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Function to write new
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-323">
+<div class="content">
+<pre>@input : string of new GUID
+@return : boolean true if write ok, otherwise is false</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-327">
+<h2 id="_obd2">6. OBD2</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-329">
+<h3 id="_methods_2">6.1. Methods</h3>
+<div class="sect3 data-line-331">
+<h4 id="_obd2query">6.1.1. obd2Query</h4>
+<div class="admonitionblock tip data-line-333">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Use to query OBD2 Protocol , user can feed callback function to get process info. When OBDII not unplug, VCI not continue query.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock data-line-337">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">obd2Query(cb?: ({ percent, index, total, message, isfinish }: {
+       percent: any;
+       index: any;
+       total: any;
+       message: any;
+       isfinish: any;
+    }) =&gt; any): Promise&lt;enumProtocol&gt;</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-346">
+<div class="content">
+<pre>@param cb — use to notify linking info when OBII Cable plugging
+@returns — linked protocol</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-349">
+<h4 id="_obd2retrivedata">6.1.2. obd2RetriveData</h4>
+<div class="admonitionblock tip data-line-351">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-352">
+<p>Use to get obd2 data :</p>
+</div>
+<div class="ulist data-line-354">
+<ul>
+<li class="data-line-354">
+<p>Monitor Icon</p>
+</li>
+<li class="data-line-356">
+<p>Freeze Frame</p>
+</li>
+<li class="data-line-358">
+<p>DTC</p>
+</li>
+<li class="data-line-360">
+<p>Vin Number</p>
+</li>
+<li class="data-line-362">
+<p>Read Service 9</p>
+</li>
+<li class="data-line-364">
+<p>Get report command , (Raw Data Format)</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock data-line-368">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    obd2RetriveData(cb?: ({ message }: {
+        message: any;
+    }) =&gt; any): Promise&lt;any&gt;
+    Reading of full obd2 : Monitor Icon , FF , DTC , VIN and Get Report</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-375">
+<div class="content">
+<pre>@param cb
+@returns — Message getting Monitor icon, FF, Dtc, VIN, full report</pre>
+</div>
+</div>
+<div class="listingblock data-line-379">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">        obd2QuickRetriveData(cb?: ({ message }: {
+            message: any;
+        }) =&gt; any): Promise&lt;any&gt;
+        Reading VIN</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-386">
+<div class="content">
+<pre>@param cb
+@returns — message getting VIN</pre>
+</div>
+</div>
+<div class="listingblock data-line-390">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">        retreiveFFDTCMonData(cb?: ({ message }: {
+            message: any;
+        }) =&gt; any): Promise&lt;any&gt;
+        Reading: FF, DTC, MonitorIcon.</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-397">
+<div class="content">
+<pre>@param cb
+@returns — message getting FF, DTC, MonitorIcon</pre>
+</div>
+</div>
+<div class="listingblock data-line-401">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">        retreiveDTCData(cb?: ({ message }: {
+            message: any;
+        }) =&gt; any): Promise&lt;any&gt;
+        Reading DTC only</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-408">
+<div class="content">
+<pre>@param cb
+@returns — message getting DTC</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-411">
+<h4 id="_obd2autolink">6.1.3. obd2AutoLink</h4>
+<div class="admonitionblock tip data-line-412">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This method will call query protocol , then if detected protocol , it will involve obd2RetriveData
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3 data-line-414">
+<h4 id="_obd2ffdtcmonlink">6.1.4. obd2FFDTCMonLink</h4>
+<div class="admonitionblock tip data-line-415">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Same as obd2AutoLink but only retrive FF &amp; DTC &amp; Monitor Icon
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3 data-line-417">
+<h4 id="_obd2dtclink">6.1.5. obd2DTCLink</h4>
+<div class="admonitionblock tip data-line-418">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Same as obd2AutoLink but only retrive DTC
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3 data-line-420">
+<h4 id="_getvehreport_ymme_profile">6.1.6. getVehReport_YMME_PROFILE</h4>
+<div class="literalblock data-line-422">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{bufferIndex:Number,data:[]}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-425">
+<p><em>Example:this method read current ymme profile in device</em></p>
+</div>
+<div class="literalblock data-line-427">
+<div class="content">
+<pre>[{"bufferIndex":0,"data":"[aa 31 46 4d 35 4b 37 46 38 32 4a 47 41 32 38 32 32 39 00 03 00 26 00 0c 00 0a 00 ff ff ff ff 1a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00]"}]</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-429">
+<h4 id="_getvehreport_obd2_ld_sid1_buff">6.1.7. getVehReport_OBD2_LD_SID1_BUFF</h4>
+<div class="literalblock data-line-431">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{bufferIndex:Number,data:[]}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-434">
+<p><em>Example:This method use to read LD Buff ECU and TCU return</em></p>
+</div>
+<div class="literalblock data-line-436">
+<div class="content">
+<pre>[{"bufferIndex":0,"data":"[aa be 3f a8 13 00 07 e5 e5]"},{"bufferIndex":1,"data":"[aa 98 18 80 13 81 04 00 00]"}]</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-438">
+<h4 id="_getvehreport_obd2_ff_sid2_buff">6.1.8. getVehReport_OBD2_FF_SID2_BUFF</h4>
+<div class="literalblock data-line-440">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{bufferIndex:Number,data:[]}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-443">
+<p><em>Example:This method read raw data of buffer freeze frame ecu and tcu return</em></p>
+</div>
+<div class="literalblock data-line-445">
+<div class="content">
+<pre>[{"bufferIndex":0,"data":"[aa 26 00 00 02 00 00 04 aa 20 02 04 00 04 aa 40 02 08 00 04 aa 01 02 0c 00 04 aa 02 02 10 00 02 aa 03 02 12 00 00 aa 04 02 12 00 00 aa 05 02 12 00 00 aa 06 02 12 00 00 aa 07 02 12 00 00 aa 0b 02 12 00 00 aa 0c 02 12 00 00 aa 0d 02 12 00 00 aa 0e 02 12 00 00 aa 0f 02 12 00 00 aa 10 02 12 00 00 aa 11 02 12 00 00 aa 15 02 12 00 00 aa 1f 02 12 00 00 aa 2c 02 12 00 00 aa 2e 02 12 00 00 aa 2f 02 12 00 00 aa 30 02 12 00 00 aa 31 02 12 00 00 aa 32 02 12 00 00 aa 33 02 12 00 00 aa 34 02 12 00 00 aa 3c 02 12 00 00 aa 41 02 12 00 00 aa 42 02 12 00 00 aa 43 02 12 00 00 aa 44 02 12 00 00 aa 45 02 12 00 00 aa 46 02 12 00 00 aa 47 02 12 00 00 aa 49 02 12 00 00 aa 4a 02 12 00 00 aa 4c 02 12 00 00 aa 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 fe 3f 88 03 00 17 f0 11 fe d0 00 00 00 07 e5 e5 f0 09 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00]"},{"bufferIndex":1,"data":"[aa 0c 00 00 02 00 00 04 aa 20 02 04 00 04 aa 40 02 08 00 04 aa 02 02 0c 00 02 aa 04 02 0e 00 00 aa 05 02 0e 00 00 aa 0c 02 0e 00 00 aa 0d 02 0e 00 00 aa 11 02 0e 00 00 aa 1f 02 0e 00 00 aa 42 02 0e 00 00 aa 49 02 0e 00 00 aa 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 58 18 80 03 00 00 00 01 40 80 00 00 c1 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00]"}]</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-447">
+<h4 id="_getvehreport_obd2_dtc_sid37a_buff">6.1.9. getVehReport_OBD2_DTC_SID37A_BUFF</h4>
+<div class="literalblock data-line-449">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{bufferIndex:Number,data:[]}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-452">
+<p><em>Example: read dtc of 2 buffer ECU and TCU OBD2</em></p>
+</div>
+<div class="literalblock data-line-454">
+<div class="content">
+<pre>[{"bufferIndex":0,"data":"[00 00 02 00 01 1d 00 e8 07 00 00 1c 09 02 f0 09 04 01 21 05 01 23 05 07 06 05 07 07 05 12 33 05 21 01 05 02 28 05 01 06 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 aa 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 aa]"},{"bufferIndex":1,"data":"[01 00 03 00 01 1d 00 e9 07 00 00 1c 01 02 f0 09 05 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 aa 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 aa]"}]</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-456">
+<h4 id="_linkvehreport_obd2_specialtest_sid5">6.1.10. linkVehReport_OBD2_SPECIALTEST_SID5</h4>
+<div class="admonitionblock tip data-line-457">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to link OBD2 Service 5 in Special Test O2 Sensor
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-459">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{result:String}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-462">
+<p><em>Example: link and get service 5 data store in sid5_buff</em></p>
+</div>
+<div class="literalblock data-line-464">
+<div class="content">
+<pre>Success: {"result": "OK"}
+No Response: {"result": "Sent"}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-467">
+<h4 id="_getvehreport_obd2_specialtest_sid5_buff">6.1.11. getVehReport_OBD2_SPECIALTEST_SID5_BUFF</h4>
+<div class="admonitionblock tip data-line-468">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to get data of OBD2 Service 5 buffer which is gotten from link_OBD2_SPECIALTEST_SID5
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-470">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-473">
+<p><em>Example: get buffer of sid 05 with json format</em></p>
+</div>
+<div class="literalblock data-line-475">
+<div class="content">
+<pre>//TODO</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-477">
+<h4 id="_linkvehreport_obd2_specialtest_sid6">6.1.12. linkVehReport_OBD2_SPECIALTEST_SID6</h4>
+<div class="admonitionblock tip data-line-478">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to link OBD2 Service 6 in Special Test OBD Monitor
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-480">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{result:String}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-483">
+<p><em>Example: link and get service 6 data store in sid6_buff</em></p>
+</div>
+<div class="literalblock data-line-485">
+<div class="content">
+<pre>Success: {"result": "OK"}
+No Response: {"result": "Sent"}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-488">
+<h4 id="_getvehreport_obd2_specialtest_sid6_buff">6.1.13. getVehReport_OBD2_SPECIALTEST_SID6_BUFF</h4>
+<div class="admonitionblock tip data-line-489">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to get data of OBD2 Service 6 buffer which is gotten from link_OBD2_SPECIALTEST_SID6
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-491">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-494">
+<p><em>Example: get buffer of sid 06 with json format</em></p>
+</div>
+<div class="literalblock data-line-496">
+<div class="content">
+<pre>{"Exhaust Gas Sensor Monitor Bank 1 - Sensor 1 ($01)":[["$7E8","HO2S11 Heater Current ($81)2)","0.000 (Amp)","0.000 (Amp)","0.000 (Amp)","OK"],["$7E8","UEGO11 Rich to Lean Response Time ($87)mp)","0.000 s(0 min,0 s)","0.000 s(0 min,0 s)","0.000 s(0 min,0 s)","OK"],["$7E8","UEGO11 Lean to Rich Response Time ($88)mp)","0.000 s(0 min,0 s)","0.000 s(0 min,0 s)","0.000 s(0 min,0 s)","OK"]],"Exhaust Gas Sensor Monitor Bank 1 - Sensor 2 ($02)":[["$7E8","HO2S12 sensor switch-point voltage ($01)p)","0.000000 (V)","0.000000 (V)","0.000000 (V)","OK"],["$7E8","HO2S12 Fuel Shut off Rich to Lean Response Rate ($85)(V)","0 (mV/s)","0 (mV/s)","0 (mV/s)","OK"],["$7E8","HO2S12 Fuel Shut off Rich to Lean Response Time ($86)(V)","0.000 s(0 min,0 s)","0.000 s(0 min,0 s)","0.000 s(0 min,0 s)","OK"]],"Catalyst Monitor Bank 1 ($21)":[["$7E8","Bank 1 index-ratio and max. limit ($80)nse Time ($86)(V)","0.0000000","0.0000000","0.0000000","OK"]],"EGR Monitor Bank 2 ($33)":[["$7E8","Component ID: $82","0.000000","0.000000","0.000000","OK"]],"VVT Monitor Bank 1 ($35)":[["$7E8","Camshaft Advanced Position Error Bank 1 ($80)00","0.00 (Angle)","0.00 (Angle)","0.00 (Angle)","OK"],["$7E8","Camshaft Retarded Position Error Bank 1 ($81)00","0.00 (Angle)","0.00 (Angle)","0.00 (Angle)","OK"]],"EVAP Monitor $7E8":[["$7E8","Phase 2 0.040â cruise leak check vacuum bleed-up and test limits ($80)le)","0.00 (inH2O)","0.00 (inH2O)","0.00 (inH2O)","OK"]]," (0.040â) ($3B)nk 1 - Sensor 2 ($02)tor General Data ($A1)":[["$7E8","Blocked Evap System Line - Screening test ($80)-up and test limits ($80)le)","0.00 (inH2O/s)","0.00 (inH2O/s)","0.00 (inH2O/s)","OK"],["$7E8","Blocked Evap System Line - Fault confirmation test ($81)est limits ($80)le)","0.00 (inH2O)","0.00 (inH2O)","0.00 (inH2O)","OK"],["$7E8","Vapor Blocking Valve Performance ($82)rmation test ($81)est limits ($80)le)","0.00 (inH2O)","0.00 (inH2O)","0.00 (inH2O)","OK"]],"nsor 2 ($02)tor General Data ($A1)":[["$7E8","Total engine misfire and catalyst damage misfire rate ($80) limits ($80)le)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"],["$7E8","Total engine misfire and emission threshold misfire rate ($81)mits ($80)le)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"],["$7E8","Highest catalyst-damage misfire and catalyst damage threshold misfire rate ($82)00000 (%)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"],["$7E8","Highest emission-threshold misfire and emission threshold misfire rate ($83)$82)00000 (%)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"],["$7E8","Inferred catalyst mid-bed temperature ($84)sion threshold misfire rate ($83)$82)00000 (%)","-40.0 (degree F)","-40.0 (degree F)","-40.0 (degree F)","OK"]],"Inferred catalyst mid-bed temperature ($84)sion threshold misfire rate ($83)$82)00000 (%)":[["$7E8","EWMA misfire counts for last 10 driving cycles ($0B)shold misfire rate ($83)$82)00000 (%)","0 (counts)","0 (counts)","0 (counts)","OK"],["$7E8","Misfire counts for last/current driving cycle ($0C))shold misfire rate ($83)$82)00000 (%)","0 (counts)","0 (counts)","0 (counts)","OK"],["$7E8","Cylinder X misfire rate and catalyst damage misfire rate ($80)ire rate ($83)$82)00000 (%)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"],["$7E8","Cylinder X misfire rate and emission threshold misfire rate ($81) rate ($83)$82)00000 (%)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"]],"ssion threshold misfire rate ($81) rate ($83)$82)00000 (%)":[["$7E8","EWMA misfire counts for last 10 driving cycles ($0B)re rate ($81) rate ($83)$82)00000 (%)","0 (counts)","0 (counts)","0 (counts)","OK"],["$7E8","Misfire counts for last/current driving cycle ($0C))re rate ($81) rate ($83)$82)00000 (%)","0 (counts)","0 (counts)","0 (counts)","OK"],["$7E8","Cylinder X misfire rate and catalyst damage misfire rate ($80)81) rate ($83)$82)00000 (%)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"],["$7E8","Cylinder X misfire rate and emission threshold misfire rate ($81) rate ($83)$82)00000 (%)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"]],"81) rate ($83)$82)00000 (%)":[["$7E8","EWMA misfire counts for last 10 driving cycles ($0B)re rate ($81) rate ($83)$82)00000 (%)","0 (counts)","0 (counts)","0 (counts)","OK"],["$7E8","Misfire counts for last/current driving cycle ($0C))re rate ($81) rate ($83)$82)00000 (%)","0 (counts)","0 (counts)","0 (counts)","OK"],["$7E8","Cylinder X misfire rate and catalyst damage misfire rate ($80)81) rate ($83)$82)00000 (%)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"],["$7E8","Cylinder X misfire rate and emission threshold misfire rate ($81) rate ($83)$82)00000 (%)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"]],"000000 (%)":[["$7E8","EWMA misfire counts for last 10 driving cycles ($0B)re rate ($81) rate ($83)$82)00000 (%)","0 (counts)","0 (counts)","0 (counts)","OK"],["$7E8","Misfire counts for last/current driving cycle ($0C))re rate ($81) rate ($83)$82)00000 (%)","0 (counts)","0 (counts)","0 (counts)","OK"],["$7E8","Cylinder X misfire rate and catalyst damage misfire rate ($80)81) rate ($83)$82)00000 (%)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"],["$7E8","Cylinder X misfire rate and emission threshold misfire rate ($81) rate ($83)$82)00000 (%)","0.000000 (%)","0.000000 (%)","0.000000 (%)","OK"]]}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-498">
+<h4 id="_linkvehreport_obd2_specialtest_sid8">6.1.14. linkVehReport_OBD2_SPECIALTEST_SID8</h4>
+<div class="admonitionblock tip data-line-499">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to link OBD2 Service 6 in Special Test OBD Monitor
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-501">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{result:String}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-505">
+<p><em>Example: link service 8</em></p>
+</div>
+<div class="literalblock data-line-507">
+<div class="content">
+<pre>Success: {"result": "OK"}
+No Response or Negative Response: {"result": "Sent"}
+Not Support: {"result": "Not support"}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-511">
+<h4 id="_obd2_erase_dtcs">6.1.15. OBD2_erase_Dtcs</h4>
+<div class="admonitionblock tip data-line-512">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to erase OBD2 Dtcs
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-514">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{result:String}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-517">
+<p><em>Example: Erase DTCs</em></p>
+</div>
+<div class="literalblock data-line-519">
+<div class="content">
+<pre>Success: {"result": "OK"}
+No Response: {"result": "Sent"}
+Negative Response: {"result": "&lt;Error Code&gt;"}
+ERASE_ERR_CODE = {
+            0x00: "OBD2_ERASE_STT_NONE",
+            0x01: "OBD2_ERASE_STT_SUCCESS",
+            0x02: "OBD2_ERASE_STT_NEGATIVE",
+            0x03: "OBD2_ERASE_STT_NO_RESPONSE",
+            0x04: "OBD2_ERASE_STT_NEGATIVE_22",
+            0xFF: "OBD2_ERASE_STT_UNKNOWN"
+        }</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-531">
+<h4 id="_getvehreport_ymme_string">6.1.16. getVehReport_YMME_String</h4>
+<div class="admonitionblock tip data-line-532">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get string of the current YMME
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-534">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-537">
+<p><em>Example: response of function under object</em></p>
+</div>
+<div class="literalblock data-line-539">
+<div class="content">
+<pre>{
+  "year": "2015",
+  "make": "Chevrolet",
+  "model": "Equinox",
+  "engine": "V6, 3.6L (VIN 8th = 3)"
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-546">
+<h4 id="_getvehreport_monitoriconstatus">6.1.17. getVehReport_MonitorIconStatus</h4>
+<div class="admonitionblock tip data-line-547">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get monitor icon status
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-549">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-552">
+<p><em>Example: response of function under object</em></p>
+</div>
+<div class="literalblock data-line-554">
+<div class="content">
+<pre>{
+  "MIL": "On",
+  "Complete": [
+    "Misfire Monitor",
+    "Fuel System Monitor",
+    "Comprehensive Component Monitor (CCM)"
+  ],
+  "Incomplete": [
+    "Catalyst Monitor",
+    "EVAP System Monitor",
+    "Oxygen Sensor Monitor"
+  ]
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-568">
+<h4 id="_getvehreport_freezeframedtcinfo">6.1.18. getVehReport_FreezeFrameDTCInfo</h4>
+<div class="admonitionblock tip data-line-569">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get FreezeFrame DTC Information
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-571">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-574">
+<p><em>Example: response of array object</em></p>
+</div>
+<div class="literalblock data-line-576">
+<div class="content">
+<pre>[
+  "P0136", //DTC code
+  "Stored", // status
+  "Oxygen Sensor Circuit (Bank 1 Sensor 2)" // definition
+]</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-582">
+<h4 id="_getvehreport_freezeframeldinfo">6.1.19. getVehReport_FreezeFrameLDInfo</h4>
+<div class="admonitionblock tip data-line-583">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get FreeFrame LiveData Information
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-585">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-588">
+<p><em>Example: response of array object</em></p>
+</div>
+<div class="literalblock data-line-590">
+<div class="content">
+<pre>[
+  [
+    "Fuel Sys 1",
+    "N/A"
+  ],
+  [
+    "Fuel Sys 2",
+    "N/A"
+  ],
+  [
+    "Calc Load",
+    "0.0 (%)"
+  ],
+  [
+    "ECT",
+    "-40 (Â°F)"
+  ],
+  [
+    "STFT B1",
+    "0.0 (%)"
+  ],
+  [
+    "LTFT B1",
+    "0.0 (%)"
+  ],
+  [
+    "STFT B2",
+    "0.0 (%)"
+  ],
+  [
+    "LTFT B2",
+    "0.0 (%)"
+  ],
+  [
+    "MAP",
+    "3 (inHg)"
+  ],
+  [
+    "Eng RPM",
+    "0"
+  ],
+  [
+    "Veh Speed",
+    "0 (mph)"
+  ],
+  [
+    "Spark Adv",
+    "11.0 (Â°)"
+  ],
+  [
+    "IAT",
+    "-40 (Â°F)"
+  ],
+  [
+    "MAF",
+    "0.00 (lb/min)"
+  ],
+  [
+    "TPS",
+    "100.0 (%)"
+  ],
+  [
+    "Run Time",
+    "0 (sec)"
+  ],
+  [
+    "Command EVAP",
+    "0.0 (%)"
+  ],
+  [
+    "Fuel Level",
+    "0.0 (%)"
+  ],
+  [
+    "Warm-up DTC Clr",
+    "0"
+  ],
+  [
+    "Clr Dist",
+    "0 (miles)"
+  ],
+  [
+    "EVAP_VP",
+    "7.5 (InH2O)"
+  ],
+  [
+    "BARO",
+    "27 (inHg)"
+  ],
+  [
+    "CAT Te 11",
+    "32 (Â°F)"
+  ],
+  [
+    "CAT Te 21",
+    "32 (Â°F)"
+  ],
+  [
+    "ECU Volts",
+    "11.529 (V)"
+  ],
+  [
+    "LOAD Value",
+    "0.0 (%)"
+  ],
+  [
+    "EQ Ratio",
+    "0.245"
+  ],
+  [
+    "Rel TPS",
+    "87.5 (%)"
+  ],
+  [
+    "Ambient",
+    "32 (Â°F)"
+  ],
+  [
+    "TPS B",
+    "100.0 (%)"
+  ],
+  [
+    "ACC Pedal D",
+    "0.0 (%)"
+  ],
+  [
+    "ACC Pedal E",
+    "0.0 (%)"
+  ],
+  [
+    "Command TAC",
+    "0.4 (%)"
+  ]
+]</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-725">
+<h4 id="_getvehreport_obd2_dtc_info">6.1.20. getVehReport_OBD2_DTC_Info</h4>
+<div class="admonitionblock tip data-line-726">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get DTC information including code and status of DTCs of each module ECM or TCM
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-728">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-731">
+<p><em>Example: response of array object</em></p>
+</div>
+<div class="literalblock data-line-733">
+<div class="content">
+<pre>[
+  {
+  "ModuleName": "ECM",
+  "Dtcs": [
+      [
+        "P0136",
+        "Stored"
+      ],
+      [
+        "P0480",
+        "Stored"
+      ],
+      [
+        "P0200",
+        "Pending"
+      ],
+      [
+        "P0200",
+        "Permanent"
+      ]
+    ],
+  "InvalidDTC": 0
+  }
+]</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-758">
+<h4 id="_getvehreport_obd2_dtc_def">6.1.21. getVehReport_OBD2_DTC_Def</h4>
+<div class="admonitionblock tip data-line-759">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get DTC information including code and status of DTCs of each module ECM or TCM
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-761">
+<div class="content">
+<pre>@input : (moduleindex,index) ECM module index =0, TCM module index =1
+@return : Promise&lt;Array&lt;{}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-764">
+<p><em>Example: the response when called this function is under object</em>
+    [
+    "P0136",
+    "Stored",
+    "Oxygen Sensor Circuit (Bank 1 Sensor 2)"
+    ]</p>
+</div>
+</div>
+<div class="sect3 data-line-771">
+<h4 id="_getvehreport_obd2_vehicleinfo_sid9">6.1.22. getVehReport_OBD2_VehicleInfo_SID9</h4>
+<div class="admonitionblock tip data-line-772">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get vehicle info including VIN, Module, CalID, CVN, IPT
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-774">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;Array&lt;{}&gt;&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-777">
+<p><em>Example: the response when called this function is under object</em>
+    {
+      "VIN": "2GNFLGE35F6274995",
+      "Module": [
+      "$7E8"
+      ],
+      "CalID": [
+      "12644447",
+      "12663232",
+      "12663230",
+      "12638535",
+      "12654294",
+      "12654299",
+      "12654305",
+      "12654300"
+      ],
+      "CVN": [
+      "00 00 D6 B1",
+      "00 00 07 A5",
+      "00 00 FA 52",
+      "00 00 98 99",
+      "00 00 E2 8A",
+      "00 00 3D 6E",
+      "00 00 72 F5",
+      "00 00 33 02"
+      ],
+      "IPT": [
+      [
+        "OBDCOND",
+        "3815"
+      ],
+      [
+        "IGNCNTR",
+        "12009"
+      ],
+      [
+        "CATCOMP1",
+        "5851"
+      ],
+      [
+        "CATCOND1",
+        "3622"
+      ],
+      [
+        "CATCOMP2",
+        "5850"
+      ],
+      [
+        "CATCOND2",
+        "3622"
+      ],
+      [
+        "O2SCOMP1",
+        "3312"
+      ],
+      [
+        "O2SCOND1",
+        "3622"
+      ],
+      [
+        "O2SCOMP2",
+        "3313"
+      ],
+      [
+        "O2SCOND2",
+        "3622"
+      ],
+      [
+        "EGRCOMP",
+        "6572"
+      ],
+      [
+        "EGRCOND",
+        "3815"
+      ],
+      [
+        "AIRCOMP",
+        "0"
+      ],
+      [
+        "AIRCOND",
+        "0"
+      ],
+      [
+        "EVAPCOMP",
+        "613"
+      ],
+      [
+        "EVAPCOND",
+        "690"
+      ],
+      [
+        "SO2SCOMP1",
+        "3535"
+      ],
+      [
+        "SO2SCOND1",
+        "3622"
+      ],
+      [
+        "SO2SCOMP2",
+        "3563"
+      ],
+      [
+        "SO2SCOND2",
+        "3622"
+      ]
+      ]
+    }</p>
+</div>
+</div>
+<div class="sect3 data-line-887">
+<h4 id="_setting_smogcheckstate">6.1.23. setting_smogcheckstate</h4>
+<div class="admonitionblock tip data-line-888">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to set Smog check State
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock data-line-890">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">setting_smogcheckstate(sate_enum)=&gt;Promise&lt;boolean&gt;</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-894">
+<div class="content">
+<pre>@input : enum state
+@return : true or false</pre>
+</div>
+</div>
+<div class="paragraph data-line-897">
+<p>{
+  Arizona: 0x01,
+  California: 0x02,
+  Colorado: 0x03,
+  Connecticut: 0x04,
+  DC: 0x05,
+  Delaware: 0x06,
+  Georgia: 0x07,
+  Idaho: 0x08,
+  Illinois: 0x09,
+  Indiana: 0x0A,
+  Louisiana: 0x0B,
+  Maine: 0x0C,
+  Maryland: 0x0D,
+  Massachusetts: 0x0E,
+  Missouri: 0x0F,
+  Nevada: 0x10,
+  NewHampshire: 0x11,
+  NewJersey: 0x12,
+  NewMexico: 0x13,
+  NewYork: 0x14,
+  NorthCarolina: 0x15,
+  Ohio: 0x16,
+  Oregon: 0x17,
+  Pennsylvania: 0x18,
+  RhodeIsland: 0x19,
+  Tennessee: 0x1A,
+  Texas: 0x1B,
+  Utah: 0x1C,
+  Vermont: 0x1D,
+  Virginia: 0x1E,
+  Wisconsin: 0x1F,
+  NoIMProg: 0x20,
+};</p>
+</div>
+</div>
+<div class="sect3 data-line-932">
+<h4 id="_setting_smogcheckcountry">6.1.24. setting_smogcheckcountry</h4>
+<div class="admonitionblock tip data-line-933">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to set Smog check Country
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock data-line-935">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">setting_smogcheckstate(country_enum)=&gt;Promise&lt;boolean&gt;</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-939">
+<div class="content">
+<pre>@input : enum state
+@return : true or false</pre>
+</div>
+</div>
+<div class="paragraph data-line-942">
+<p>{
+  Cache: 0x01,
+  Davis: 0x02,
+  SaltLake: 0x03,
+  Utah: 0x04,
+  Weber: 0x05,
+  Ada: 0x06,
+  Canyon: 0x07,
+  NoProgram: 0x08,
+};</p>
+</div>
+</div>
+<div class="sect3 data-line-953">
+<h4 id="_getting_ledstatus">6.1.25. getting_ledstatus</h4>
+<div class="admonitionblock tip data-line-954">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to get Led status
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock data-line-956">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">setting_smogcheckstate()=&gt;Promise&lt;{}&gt;</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-960">
+<div class="content">
+<pre>@return example : {"Led Status": "Red"}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-962">
+<h4 id="_getting_fueltype">6.1.26. getting_fueltype</h4>
+<div class="admonitionblock tip data-line-963">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to get Fuel Type
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock data-line-965">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">setting_smogcheckstate()=&gt;Promise&lt;{result:String}&gt;</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-969">
+<div class="content">
+<pre>@return example : {result:"GAS"}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-971">
+<h4 id="_getting_vehtype">6.1.27. getting_vehtype</h4>
+<div class="admonitionblock tip data-line-972">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to get Veh Type
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock data-line-974">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">setting_smogcheckstate()=&gt;Promise&lt;{result:String}&gt;</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-978">
+<div class="content">
+<pre>@return example : {result:"Hybrid"}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-980">
+<h2 id="_network_scan">7. Network Scan</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-982">
+<h3 id="_methods_3">7.1. Methods</h3>
+<div class="sect3 data-line-984">
+<h4 id="_setymmeprofile">7.1.1. setYmmeProfile</h4>
+<div class="admonitionblock tip data-line-985">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function to set Ymme Profile
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock data-line-988">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">setYmmeProfile(ymmeprofile ?= {
+  manufacture_enum: any,
+  year_enum: any,
+  make_enum: any,
+  model_enum: any,
+  engine_enum: any,
+  trim_enum: any,
+  option_enum: any,
+  transmission_enum: any
+})=&gt;Promise&lt;boolean&gt;</code></pre>
+</div>
+</div>
+<div class="literalblock data-line-1001">
+<div class="content">
+<pre>@input : YMME Profile
+@return : true or false</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1004">
+<h4 id="_getymmeprofile">7.1.2. getYMMEProfile</h4>
+<div class="admonitionblock tip data-line-1005">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This Function to get the current YMME
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1007">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;any&gt; buffer storing structMFRVinProfile</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1010">
+<h4 id="_nwscan_getsupportsystem">7.1.3. nwscan_getSupportSystem</h4>
+<div class="admonitionblock tip data-line-1011">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get the list of system and subsystem supported
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1013">
+<div class="content">
+<pre>@input : none
+@return : Promise&lt;any&gt; buffer storing system, subsystem and module_name</pre>
+</div>
+</div>
+<div class="paragraph data-line-1016">
+<p><em>Example: List of system, subsystem and module_name in json format</em></p>
+</div>
+<div class="literalblock data-line-1018">
+<div class="content">
+<pre>{"raw":null,"data":[{"System":1,"SubSystem":65535,"ModuleName":"PCM - Powertrain Control Module","InnovaGroup":16,"groupName":"PCM"},{"System":2,"SubSystem":65535,"ModuleName":"ABS - Anti-Lock Brake / Traction Control Module","InnovaGroup":2,"groupName":"ABS"},{"System":31,"SubSystem":65535,"ModuleName":"RCM - Restraint Control Module","InnovaGroup":4,"groupName":"SRS"},{"System":77,"SubSystem":65535,"ModuleName":"GEM/SJB - Generic Electronic Module / Smart Junction Box","InnovaGroup":64,"groupName":"TPMS"},{"System":84,"SubSystem":65535,"ModuleName":"IPC - Instrument Panel Control Module","InnovaGroup":64,"groupName":"TPMS"},{"System":39,"SubSystem":65535,"ModuleName":"4X4M - 4X4 Control Module","InnovaGroup":255,"groupName":"All"},{"System":16,"SubSystem":65535,"ModuleName":"ACM - Audio Control Module","InnovaGroup":255,"groupName":"All"},{"System":76,"SubSystem":65535,"ModuleName":"APIM - Accessory Protocol Interface Module","InnovaGroup":255,"groupName":"All"},{"System":71,"SubSystem":65535,"ModuleName":"DSP - (Audio) Digital Signal Processing Module","InnovaGroup":255,"groupName":"All"},{"System":78,"SubSystem":65535,"ModuleName":"FCIM - Front Controls Interface Module","InnovaGroup":255,"groupName":"All"},{"System":79,"SubSystem":65535,"ModuleName":"FDIM - Front Display Interface Module","InnovaGroup":255,"groupName":"All"},{"System":90,"SubSystem":65535,"ModuleName":"GPSM - Global Positioning System Module","InnovaGroup":255,"groupName":"All"},{"System":75,"SubSystem":65535,"ModuleName":"HVAC - Heating Ventilation Air Conditioning","InnovaGroup":255,"groupName":"All"},{"System":63,"SubSystem":65535,"ModuleName":"OCS - Occupant Classification System Module","InnovaGroup":255,"groupName":"All"},{"System":28,"SubSystem":65535,"ModuleName":"PAM - Parking Aid Module","InnovaGroup":255,"groupName":"All"},{"System":80,"SubSystem":65535,"ModuleName":"PSCM - Power Steering Control Module","InnovaGroup":255,"groupName":"All"},{"System":96,"SubSystem":65535,"ModuleName":"SODL - Side Obstacle Detection Control Module - Left","InnovaGroup":255,"groupName":"All"},{"System":97,"SubSystem":65535,"ModuleName":"SODR - Side Obstacle Detection Control Module - Right","InnovaGroup":255,"groupName":"All"},{"System":67,"SubSystem":65535,"ModuleName":"TBM - Tracking and Blocking Module","InnovaGroup":255,"groupName":"All"}]}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1020">
+<h4 id="_nwscan_linksystem">7.1.4. nwscan_LinkSystem</h4>
+<div class="literalblock data-line-1022">
+<div class="content">
+<pre>@input : {System, Subsystem}
+@return : Promise&lt;{}&gt; array</pre>
+</div>
+</div>
+<div class="paragraph data-line-1025">
+<p><em>Example: this function return the buffer in json format</em></p>
+</div>
+<div class="literalblock data-line-1027">
+<div class="content">
+<pre>If system link successfully, we have two types of response
+1. Available (Query success but cannot read Dtcs)
+  {"data":{"system":1,"subsystem":65535,"modulename":"MFI/GDI/DIESEL","Dtcs":[],"InvalidDTC":true}}
+2. Can read dtcs
+  {"data":{"system":1,"subsystem":65535,"modulename":"MFI/GDI/DIESEL","Dtcs":[{'P0110','Stored'},{'P0301','Pending'}],"InvalidDTC":false}}</pre>
+</div>
+</div>
+<div class="literalblock data-line-1033">
+<div class="content">
+<pre>If Error, json respone
+[{"error":{"system":4,"subSystem":3,"modulename":"SRS - Supplemental Restraint System","Status":"Fail"}}]</pre>
+</div>
+</div>
+<div class="literalblock data-line-1036">
+<div class="content">
+<pre>If Need recycle Key
+[{"error":{"system":4,"subSystem":3,"modulename":"SRS - Supplemental Restraint System","Status":"Need Recycle Ignition Key"}}]</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1039">
+<h4 id="_nwscan_getdtcdef">7.1.5. nwscan_getdtcdef</h4>
+<div class="literalblock data-line-1040">
+<div class="content">
+<pre>@input : {System, Subsystem, index of dtc}
+@return : Promise&lt;{}&gt; array</pre>
+</div>
+</div>
+<div class="paragraph data-line-1043">
+<p><em>Example: if we want to get dtc P0110 in the above example we set index zero</em>
+    { code:"P0110", type:"Stored", def:"def"}</p>
+</div>
+</div>
+<div class="sect3 data-line-1047">
+<h4 id="_nwscan_erasesystem">7.1.6. nwscan_eraseSystem</h4>
+<div class="admonitionblock tip data-line-1048">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+this function is used to erase the profile with system and subsystem input
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1050">
+<div class="content">
+<pre>@input : {System, Subsystem}
+@return : Promise&lt;{Erase_Dtc:Status}</pre>
+</div>
+</div>
+<div class="paragraph data-line-1053">
+<p><em>Example: this function return of status of erase system</em></p>
+</div>
+<div class="literalblock data-line-1055">
+<div class="content">
+<pre>Erase OK : {Erase_Dtc:"OK"}
+Erase no repsonse : {Erase_Dtc:"Sent"}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-1058">
+<h2 id="_odometer_service_check_warning_light_tpms">8. Odometer, Service Check, Warning Light, TPMS</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-1060">
+<h3 id="_methods_4">8.1. Methods</h3>
+<div class="sect3 data-line-1062">
+<h4 id="_get_support_list_of_profile_id_functions">8.1.1. Get support list of profile ID functions</h4>
+<div class="paragraph data-line-1064">
+<p>There are 3 functions with the same format to get Odometer, Service Check, Warning Light, TPMS</p>
+</div>
+<div class="ulist data-line-1066">
+<ul>
+<li class="data-line-1066">
+<p>getodometer_pidsupport</p>
+</li>
+<li class="data-line-1068">
+<p>getservicecheck_pidsupport</p>
+</li>
+<li class="data-line-1070">
+<p>getwarninglight_pidsupport</p>
+</li>
+<li class="data-line-1072">
+<p>gettpmspid_pidsupport</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip data-line-1074">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+These functions are used to get the profile_id supported list. Each profile_id in list is get value using getofmprofileid_value
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1076">
+<div class="content">
+<pre>@input: none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1079">
+<p><em>Example: These functions return array</em></p>
+</div>
+<div class="literalblock data-line-1081">
+<div class="content">
+<pre>{"num_profile":2,"list":[{"ofm_item":1036,"profileid":139},{"ofm_item":1035,"profileid":140}]}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1083">
+<h4 id="_getofmprofileid_value">8.1.2. getofmprofileid_value</h4>
+<div class="literalblock data-line-1085">
+<div class="content">
+<pre>@input: profileid
+@output: Promise&lt;{}&gt; {pid:profileid, value:val, unit:unit}</pre>
+</div>
+</div>
+<div class="paragraph data-line-1088">
+<p>_Example: This function returns value under json format</p>
+</div>
+<div class="literalblock data-line-1090">
+<div class="content">
+<pre>{pid:139, value:"ON", unit:"null"}
+{pid:140, value:"ON" , unit:"null"}
+{pid:312, value:"4.6" , unit:"psi"}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1094">
+<h4 id="_ofm_getitemname">8.1.3. ofm_getitemname</h4>
+<div class="literalblock data-line-1096">
+<div class="content">
+<pre>@input: ofm_item index get from 8.1.1
+@output: String name of ofm_item</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-1099">
+<h2 id="_mil_status">9. MIL Status</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-1101">
+<h3 id="_methods_5">9.1. Methods</h3>
+<div class="sect3 data-line-1103">
+<h4 id="_getvehreport_mil_status">9.1.1. getVehReport_MIL_Status</h4>
+<div class="literalblock data-line-1105">
+<div class="content">
+<pre>@input: none
+@output: Promise&lt;{MilStatus:status}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1108">
+<p><em>Example: This function to get the status of MIL, the response is in json format</em></p>
+</div>
+<div class="literalblock data-line-1110">
+<div class="content">
+<pre>{"MilStatus":"OFF"} if MIL Off
+{"MilStatus":"ON"} if MIL On</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-1113">
+<h2 id="_drive_cycle">10. Drive Cycle</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-1115">
+<h3 id="_methods_6">10.1. Methods</h3>
+<div class="sect3 data-line-1117">
+<h4 id="_getvehreport_drivecycle_mon_list">10.1.1. getVehReport_DriveCycle_Mon_List</h4>
+<div class="admonitionblock tip data-line-1118">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function get list of Drive Cycle Monitor Complete and InComplete
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1120">
+<div class="content">
+<pre>@input : None
+@output: Promise&lt;{}&gt; {"Complete":{itemstring:id},"Incomplete":{itemstring:id}}</pre>
+</div>
+</div>
+<div class="paragraph data-line-1123">
+<p><em>Example: Function return the data list of drive cycle</em></p>
+</div>
+<div class="literalblock data-line-1125">
+<div class="content">
+<pre>{"Complete":{"Misfire Monitor":14,"Fuel System Monitor":10,"Comprehensive Component Monitor (CCM)":4},"Incomplete":{"EGR System Monitor":7,"Catalyst Monitor":3,"EVAP System Monitor":9,"Oxygen Sensor Monitor":16,"Oxygen Sensor Heater Monitor":13}}
+==&gt; Complete
+====&gt; Misfire Monitor: textid--&gt; 14 ...</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1129">
+<h4 id="_getvehreport_drivecycle_mon_text">10.1.2. getVehReport_DriveCycle_Mon_Text</h4>
+<div class="admonitionblock tip data-line-1130">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function get text of id
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1132">
+<div class="content">
+<pre>@input : textid
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1135">
+<p><em>Example: the response of "Comprehensive Component Monitor (CCM)" which has textid is 4 following format</em></p>
+</div>
+<div class="literalblock data-line-1137">
+<div class="content">
+<pre>[{"Opt":"","Note":"","Cond":"","Proc":"1. Pre-Conditioning Requirements:\n A. Cold soaks the vehicle for 8 hours.\n B. No DTC Code(s) present.\n C. Fuel Fills between 15% and 85 %.\n2. Driving Procedure.\n A. Start the vehicle and idle for four (4) minutes.\n B. Idle the vehicle in drive for 40 seconds (neutral for M/T).\n C. Accelerate to 45 mph, using Â¼ to Â½ throttle (M/T stay in second gear for at least 5 seconds). Accelerate for at least 10 seconds and shift through to 5th gear.\n D. Drive with a steady throttle at 45 mph for 30 seconds.\n E. Stop the vehicle and idle in drive or neutral for 40 seconds.\n F. Drive at speeds between 25 mph and 45 mph for 15 minutes.\n Note: Uses 25% to 50% throttle accelerations. Include the following conditions:\n a. At least 5 stops with ten seconds of idle time.\n b. At least 3 steady speed sections of 1 Â½ minutes duration.\n G. Drive the vehicle between 45 mph and 60 mph for 8 minutes (use high gear).\n H. Keep a steady speed between 45 mph and 60 mph for 5 minutes.\n I. Drive the vehicle between 45 mph and 60 mph for 8 minutes (use high gear).\n J. Stop vehicle, idle for 40 seconds."}]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-1139">
+<h2 id="_features_using_gui_vci">11. Features using GUI VCI</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip data-line-1141">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-1142">
+<p>There are some features using the GUI VCI process to get screen info and handle processes, such as:</p>
+</div>
+<div class="ulist data-line-1144">
+<ul>
+<li class="data-line-1144">
+<p>Special Test</p>
+</li>
+<li class="data-line-1146">
+<p>Actuator Test</p>
+</li>
+<li class="data-line-1148">
+<p>&#8230;&#8203;(update in next release)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-1150">
+<p>The response received from VCI is screen info which is divided into some screen form</p>
+</div>
+<div class="paragraph data-line-1152">
+<p>There are two types of items; one is LiveData item, one is option key items</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2 data-line-1156">
+<h3 id="_screen_from">11.1. Screen From</h3>
+<div class="sect3 data-line-1159">
+<h4 id="_softkey">11.1.1. softkey</h4>
+<div class="listingblock data-line-1161">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    {
+      "softkeyform": [
+          "sofkey1",
+          "",
+          "sofkey2"
+        ]
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-1172">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1174">
+<div class="content">
+<pre>{"softkeyform":["Back","","Exit"]}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1176">
+<h4 id="_progressbar">11.1.2. progressbar</h4>
+<div class="listingblock data-line-1179">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    {
+        "progressbar":[
+         percentage, //0-&gt;100
+         "text display"]
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-1188">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1190">
+<div class="content">
+<pre>{"progressbar":[0,"12 s"]}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1192">
+<h4 id="_infovalform">11.1.3. infovalform</h4>
+<div class="imageblock data-line-1194">
+<div class="content">
+<img src="images/readme-8d78d.png" alt="readme 8d78d">
+</div>
+</div>
+<div class="paragraph data-line-1196">
+<p><em>json format:</em></p>
+</div>
+<div class="listingblock data-line-1198">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    {
+      "infovalform": {
+        "hdr": [
+          "Title",
+          "Description1",
+          "Instruction",
+          "Body",
+          "Subbody",
+          "Description2",
+          "Footer"
+        ],
+        "hl": 1,
+        "tt": 4
+      }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-1217">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1219">
+<div class="content">
+<pre>{
+  "infovalform":
+    {
+      "hdr":[
+        "Engine Speed Control","","","","",""],
+        "items":["Engine Speed":"2000 RPM","Increase":"","Decrease":""],
+        hl:1,
+        tt:100,
+    }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1230">
+<h4 id="_menuform">11.1.4. menuform</h4>
+<div class="imageblock data-line-1232">
+<div class="content">
+<img src="images/readme-49846.png" alt="readme 49846">
+</div>
+</div>
+<div class="paragraph data-line-1234">
+<p><em>json format:</em></p>
+</div>
+<div class="listingblock data-line-1236">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">{
+      "menuform": {
+        "hdr": [
+          "Title",
+          "Instruction",
+          "Body",
+          "Footer"
+        ],
+        "items":[
+          "item_1":"",
+          "item_2":"",
+          ...
+          "item_n":""
+        ]
+        "hl": 1,
+        "tt": 4
+      }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-1258">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1260">
+<div class="content">
+<pre>{
+  "menuform":
+  {
+    "hdr":["System Test","","Please select function","","",""],
+    "items":["Oil Life Reset":"","Engine Speed Control":""],
+    "hl":0,
+    "tt":123
+  }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1270">
+<h4 id="_textform">11.1.5. textform</h4>
+<div class="imageblock data-line-1272">
+<div class="content">
+<img src="images/readme-436c3.png" alt="readme 436c3">
+</div>
+</div>
+<div class="paragraph data-line-1274">
+<p><em>json format:</em></p>
+</div>
+<div class="listingblock data-line-1276">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">{
+      "textform": {
+        "str": [
+          "Title",
+          "Instruction",
+          "Body",
+          "Footer"
+        ],
+        "hl": 1,
+        "tt": 4
+      }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-1291">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1293">
+<div class="content">
+<pre>{
+    "textform":
+      {
+        "str":["System Test","","One moment please...",""],
+        "hl":0,"tt":123
+      }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1301">
+<h4 id="_inputtextform">11.1.6. inputtextform</h4>
+<div class="imageblock data-line-1303">
+<div class="content">
+<img src="images/readme-0bffa.png" alt="readme 0bffa">
+</div>
+</div>
+<div class="paragraph data-line-1305">
+<p><em>json format:</em></p>
+</div>
+<div class="listingblock data-line-1307">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    {
+      "inputtextform": [
+          "Title",
+          "Desc1",
+          "Instruction",
+          "Desc2",
+          "Footer"
+        ]
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-1319">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1321">
+<div class="content">
+<pre>{
+    "inputtextform":
+      {
+        ["Oil Life Reset","","Please input the new value, then press Perform",""]
+      }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1328">
+<h4 id="_finish">11.1.7. finish</h4>
+<div class="admonitionblock tip data-line-1329">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+issue this response when vci notice feature ending
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-1331">
+<p><em>json format:</em></p>
+</div>
+<div class="listingblock data-line-1333">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    {"Finish": ""}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1338">
+<h4 id="_keepalive">11.1.8. keepalive</h4>
+<div class="admonitionblock tip data-line-1339">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+this response notice from vci to let tablet know vci still works in GUI
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-1341">
+<p><em>json format:</em></p>
+</div>
+<div class="listingblock data-line-1343">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    {"KeepAlive": ""}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-1348">
+<h3 id="_methods_7">11.2. Methods</h3>
+<div class="admonitionblock tip data-line-1351">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-1352">
+<p>Please follow the step below</p>
+</div>
+<div class="ulist data-line-1354">
+<ul>
+<li class="data-line-1354">
+<p>call initGUIProc()</p>
+</li>
+<li class="data-line-1356">
+<p>subscribe event 'user:gui_info'(using import { Events } from '@ionic/angular';). This event listens the screen info mentioned above under object type</p>
+</li>
+<li class="data-line-1358">
+<p>call function enter process (Ex: spectest_enter_proc, actuatortest_enter_proc)</p>
+</li>
+<li class="data-line-1360">
+<p>when exit feature function, please unsubscribe and call deinitGUIProc();</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3 data-line-1364">
+<h4 id="_initguiproc">11.2.1. initGUIProc</h4>
+<div class="admonitionblock tip data-line-1365">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+this function should be called first, after that call function enter process below
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1367">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1370">
+<h4 id="_specialtest_enter_proc">11.2.2. specialtest_enter_proc</h4>
+<div class="admonitionblock tip data-line-1371">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to enter proc special test. This function should be called to run special test
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1373">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1376">
+<h4 id="_actuatortest_enter_proc">11.2.3. actuatortest_enter_proc</h4>
+<div class="admonitionblock tip data-line-1377">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to enter proc actuator test. This function should be called to run actuator test
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1379">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1382">
+<h4 id="_battery_health_check_enter_proc">11.2.4. battery_health_check_enter_proc</h4>
+<div class="admonitionblock tip data-line-1383">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to enter proc battery alternator healthy check. This function should be called to run battery alternator healthy check
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1385">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1388">
+<h4 id="_dpf_enter_proc">11.2.5. dpf_enter_proc</h4>
+<div class="admonitionblock tip data-line-1389">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to enter proc Diesel Particular Filtering Reset. This function should be called to run Diesel Particular Filtering Reset (one of Service Reset functions)
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1391">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1395">
+<h4 id="_oil_reset_enter_proc">11.2.6. oil_reset_enter_proc</h4>
+<div class="admonitionblock tip data-line-1396">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to enter proc Oil Reset. This function should be called to run Oil Reset (one of Service Reset functions)
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1398">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1401">
+<h4 id="_battery_reset_enter_proc">11.2.7. battery_reset_enter_proc</h4>
+<div class="admonitionblock tip data-line-1402">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to enter proc Battery Reset. This function should be called to run Battery Reset (one of Service Reset functions)
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1404">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1407">
+<h4 id="_epb_enter_proc">11.2.8. epb_enter_proc</h4>
+<div class="admonitionblock tip data-line-1408">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to enter proc Electric Parking Brake. This function should be called to run Electric Parking Brake (one of Service Reset functions)
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1410">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1413">
+<h4 id="_sas_enter_proc">11.2.9. sas_enter_proc</h4>
+<div class="admonitionblock tip data-line-1414">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to enter proc Steering Angle Sensor. This function should be called to run Steering Angle Sensor Calibration (one of Service Reset functions)
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1416">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1419">
+<h4 id="_tpms_reset_enter_proc">11.2.10. tpms_reset_enter_proc</h4>
+<div class="admonitionblock tip data-line-1420">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to enter proc TPMS Relearn. This function should be called to run TPMS Relearn (one of Service Reset functions)
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1422">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1425">
+<h4 id="_service_reset_proc_enter">11.2.11. service_reset_proc_enter</h4>
+<div class="admonitionblock tip data-line-1426">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to enter proc Service Reset (including Oil Reset, Battery Reset, DPF Reset, TPMS Relearn,&#8230;&#8203;). This function should be called to run Service Reset. If this function is called, we dont need call another reset functions such as oil_reset_enter_proc, tpms_reset_enter_proc, battery_reset_enter_proc, &#8230;&#8203;
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1428">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1431">
+<h4 id="_deinitguiproc">11.2.12. deinitGUIProc</h4>
+<div class="admonitionblock tip data-line-1432">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used when exit the feature process
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1434">
+<div class="content">
+<pre>@input: none
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1437">
+<h4 id="_gui_set_key_option">11.2.13. gui_set_key_option</h4>
+<div class="admonitionblock tip data-line-1438">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used when user click in the item
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1440">
+<div class="content">
+<pre>@input: id:number the order in response of option key item (first option key items is 0)
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1443">
+<h4 id="_gui_set_input_val">11.2.14. gui_set_input_val</h4>
+<div class="admonitionblock tip data-line-1444">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to write the user input in "inputtextform" screen
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1446">
+<div class="content">
+<pre>@input: input_val:string user input under string type
+@output: none</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1449">
+<h4 id="_gui_set_softkey">11.2.15. gui_set_softkey</h4>
+<div class="admonitionblock tip data-line-1450">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to notice VCI when user click on softkey
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1452">
+<div class="content">
+<pre>@input: type:string softkey type under string ("left" or "right")
+@output: none</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-1455">
+<h2 id="_live_data">12. Live Data</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-1457">
+<h3 id="_method">12.1. Method</h3>
+<div class="sect3 data-line-1459">
+<h4 id="_ld_obd2_get_itemlist">12.1.1. ld_obd2_get_itemlist</h4>
+<div class="admonitionblock tip data-line-1460">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list item id and item name of OBD2
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1462">
+<div class="content">
+<pre>@input:  none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1465">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1467">
+<div class="content">
+<pre>{
+ "Group":1,
+ "ListItem":[
+      [
+         1,
+         "Fuel Sys 1",
+         "N/A",
+         "N/A",
+         "N/A"
+      ],
+      [
+         2,
+         "Fuel Sys 2",
+         "N/A",
+         "N/A",
+         "N/A"
+      ],
+      [
+         3,
+         "Calc Load,
+         "100.0",
+         "0.0",
+         "%"
+      ],
+    ]
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1495">
+<h4 id="_ld_srs_get_itemlist">12.1.2. ld_srs_get_itemlist</h4>
+<div class="admonitionblock tip data-line-1496">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list item id and item name of SRS
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1498">
+<div class="content">
+<pre>@input:  none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1501">
+<p><em>Example: the same as OBD2</em></p>
+</div>
+</div>
+<div class="sect3 data-line-1504">
+<h4 id="_ld_abs_get_itemlist">12.1.3. ld_abs_get_itemlist</h4>
+<div class="admonitionblock tip data-line-1505">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list item id and item name of ABS
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1507">
+<div class="content">
+<pre>@input:  none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1510">
+<p><em>Example: the same as OBD2</em></p>
+</div>
+</div>
+<div class="sect3 data-line-1512">
+<h4 id="_ld_ecm_get_itemlist">12.1.4. ld_ecm_get_itemlist</h4>
+<div class="admonitionblock tip data-line-1513">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list item id and item name of ECM/PCM
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1515">
+<div class="content">
+<pre>@input:  none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1518">
+<p><em>Example: the same as OBD2</em></p>
+</div>
+</div>
+<div class="sect3 data-line-1520">
+<h4 id="_ld_obd2_get_listitem_val">12.1.5. ld_obd2_get_ListItem_Val</h4>
+<div class="admonitionblock tip data-line-1521">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list of value of OBD2 LiveData from start index to end index
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1523">
+<div class="content">
+<pre>@input:  start index, end index
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1526">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1528">
+<div class="content">
+<pre>{
+   "Group":1,
+   "ListValue":[
+        [
+           1,
+           "OL"
+        ],
+        [
+           2,
+           "OL"
+        ],
+        [
+           3,
+           "0.0 (%)"
+        ],
+      ]
+    }</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1546">
+<h4 id="_ld_srs_get_listitem_val">12.1.6. ld_srs_get_ListItem_Val</h4>
+<div class="admonitionblock tip data-line-1547">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list of value of SRS LiveData from start index to end index
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1549">
+<div class="content">
+<pre>@input:  start index, end index
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1552">
+<p><em>Example: the same as OBD2</em></p>
+</div>
+</div>
+<div class="sect3 data-line-1554">
+<h4 id="_ld_abs_get_listitem_val">12.1.7. ld_abs_get_ListItem_Val</h4>
+<div class="admonitionblock tip data-line-1555">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list of value of ABS LiveData from start index to end index
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1557">
+<div class="content">
+<pre>@input:  start index, end index
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1560">
+<p><em>Example: the same as OBD2</em></p>
+</div>
+</div>
+<div class="sect3 data-line-1562">
+<h4 id="_ld_ecm_get_listitem_val">12.1.8. ld_ecm_get_ListItem_Val</h4>
+<div class="admonitionblock tip data-line-1563">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list of value of ECM/PCM LiveData from start index to end index
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1565">
+<div class="content">
+<pre>@input:  start index, end index
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1568">
+<p><em>Example: the same as OBD2</em></p>
+</div>
+</div>
+<div class="sect3 data-line-1570">
+<h4 id="_ld_obd2_get_itemval">12.1.9. ld_obd2_get_itemval</h4>
+<div class="admonitionblock tip data-line-1571">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get value of OBD2 LiveData using item_id
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1573">
+<div class="content">
+<pre>@input:  item_id
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1576">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1578">
+<div class="content">
+<pre> {
+"Group":1,
+"ListValue":[
+     [
+        1,
+        "OL"
+     ],
+   ]
+ }</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1588">
+<h4 id="_ld_abs_get_itemval">12.1.10. ld_abs_get_itemval</h4>
+<div class="admonitionblock tip data-line-1589">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get value of ABS LiveData using item_id
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1591">
+<div class="content">
+<pre>@input:  item_id
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1594">
+<p><em>Example: the same as OBD2</em></p>
+</div>
+</div>
+<div class="sect3 data-line-1596">
+<h4 id="_ld_srs_get_itemval">12.1.11. ld_srs_get_itemval</h4>
+<div class="admonitionblock tip data-line-1597">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get value of SRS LiveData using item_id
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1599">
+<div class="content">
+<pre>@input:  item_id
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1602">
+<p><em>Example: the same as OBD2</em></p>
+</div>
+</div>
+<div class="sect3 data-line-1604">
+<h4 id="_ld_ecm_get_itemval">12.1.12. ld_ecm_get_itemval</h4>
+<div class="admonitionblock tip data-line-1605">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get value of ECM/PCM LiveData using item_id
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1607">
+<div class="content">
+<pre>@input:  item_id
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1610">
+<p><em>Example: the same as OBD2</em></p>
+</div>
+</div>
+<div class="sect3 data-line-1612">
+<h4 id="_ld_obd2_get_iteminfo">12.1.13. ld_obd2_get_iteminfo</h4>
+<div class="admonitionblock tip data-line-1613">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get information of OBD2 LiveData using item_id
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1615">
+<div class="content">
+<pre>@input:  item_id : get from function get item list
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1618">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1620">
+<div class="content">
+<pre>// Item has Max-Min Val and Unit
+{
+"Group":1,
+"Item":5,
+"MaxValue":"99",
+"MinValue":"-100",
+"Unit":"%"
+}</pre>
+</div>
+</div>
+<div class="literalblock data-line-1629">
+<div class="content">
+<pre> // Item doesnt have Max-Min Val and Unit
+ {
+"Group":1,
+"Item":1,
+"MaxValue":"N/A",
+"MinValue":"N/A",
+"Unit":"N/A"
+ }</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1638">
+<h4 id="_ld_abs_get_iteminfo">12.1.14. ld_abs_get_iteminfo</h4>
+<div class="admonitionblock tip data-line-1639">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get information of ABS LiveData using item_id
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1641">
+<div class="content">
+<pre>@input:  item_id : get from function get item list
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1644">
+<h4 id="_ld_srs_get_iteminfo">12.1.15. ld_srs_get_iteminfo</h4>
+<div class="admonitionblock tip data-line-1645">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get information of SRS LiveData using item_id
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1647">
+<div class="content">
+<pre>@input:  item_id : get from function get item list
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1650">
+<h4 id="_ld_ecm_get_iteminfo">12.1.16. ld_ecm_get_iteminfo</h4>
+<div class="admonitionblock tip data-line-1651">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get information of ECM/PCM LiveData using item_id
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1653">
+<div class="content">
+<pre>@input:  item_id : get from function get item list
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1656">
+<h4 id="_ld_hybrid_get_info">12.1.17. ld_hybrid_get_info</h4>
+<div class="admonitionblock tip data-line-1657">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get information of Hybrid LiveData, and determine the Type of Hybrid LiveData. There are two types of Hybrid LiveData; the first one is Hybrid Cell Voltage, the other is Hybrid Livedata
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1659">
+<div class="content">
+<pre>@input:  none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1662">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1664">
+<div class="content">
+<pre>Json of Hybrid Cell Voltage, this type should be displayed as Bar Chart
+{
+  "Function Group":"Hybrid Cell Voltage",
+    "ListVaue":[
+    [
+      1,
+      "17.09 (V)"
+    ],
+    [
+      2,
+      "17.12 (V)"
+    ],
+    [
+      3,
+      "17.16 (V)"
+    ],
+    [
+      4,
+      "17.10 (V)"
+    ],
+    [
+      5,
+      "17.15 (V)"
+    ],
+    [
+      6,
+      "17.46 (V)"
+    ],
+    [
+      7,
+      "17.14 (V)"
+    ],
+    [
+      8,
+      "17.08 (V)"
+    ],
+    [
+      9,
+      "17.15 (V)"
+    ],
+    [
+      10,
+      "17.14 (V)"
+    ],
+    [
+      11,
+      "17.18 (V)"
+      ],
+    [
+      12,
+      "17.15 (V)"
+    ],
+    [
+      13,
+      "17.10 (V)"
+    ],
+    [
+      14,
+      "17.06 (V)"
+    ]
+  ]
+}
+Json of Hybrid Livedata is the same with OBD2, ABS, SRS LiveData
+{
+  "Function Group":"Hybrid Livedata",
+  "ListItem":[
+  [
+  832,
+  "HV DC voltage in the SLE",
+  "13107",
+  "0",
+  "V"
+  ],
+  [
+  833,
+  "SLE Power Factor Corrector voltage",
+  "13107",
+  "0",
+  "V"
+  ],
+  [
+  834,
+  "SLE AC input voltage",
+  "13107",
+  "0",
+  "V"
+  ],
+  [
+  835,
+  "HV voltage in the DC/DC converter",
+  "13107",
+  "0",
+  "V"
+  ],
+  [
+  836,
+  "HV voltage in the inverter",
+  "13107",
+  "0",
+  "V"
+  ],
+  [
+  847,
+  "Raw signal HV DC voltage inverter.",
+  "4294967.50",
+  "0.00",
+  "V"
+  ],
+  [
+  856,
+  "Indication SOC of the HV battery",
+  "127.5",
+  "0.0",
+  "%"
+  ],
+  [
+  878,
+  "SOC of first support point",
+  "655.35",
+  "0.00",
+  "%"
+  ],
+  [
+  880,
+  "SOC of second support point",
+  "655.35",
+  "0.00",
+  "%"
+  ],
+  [
+  882,
+  "SOC of third support point",
+  "655.35",
+  "0.00",
+  "%"
+  ],
+  [
+  884,
+  "SOC of fifth support point",
+  "655.35",
+  "0.00",
+  "%"
+  ],
+  [
+  886,
+  "SOC of fifth support point",
+  "655.35",
+  "0.00",
+  "%"
+  ],
+  [
+  887,
+  "Current SOC of HV battery",
+  "655.35",
+  "0.00",
+  "%"
+  ]
+  ]
+  }</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1824">
+<h4 id="_ld_enable_dtc_trigger">12.1.18. ld_enable_dtc_trigger</h4>
+<div class="admonitionblock tip data-line-1825">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+this function to enable check dtc trigger. When we enable dtc trigger the response json of ListValue add one more parameter to notify the dtc is triggered
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip data-line-1827">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get information of Hybrid LiveData, and determine the Type of Hybrid LiveData. There are two types of Hybrid LiveData; the first one is Hybrid Cell Voltage, the other is Hybrid Livedata
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1829">
+<div class="content">
+<pre>@input:  none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1832">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1834">
+<div class="content">
+<pre>{
+"Group":1,
+"ListValue":[
+    [
+       1,
+       "OL"
+    ],
+  ],
+"DTCTrigger":"P1000" --&gt; when dtc is triggered, this object is added
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1845">
+<h4 id="_ld_disable_dtc_trigger">12.1.19. ld_disable_dtc_trigger</h4>
+<div class="admonitionblock tip data-line-1846">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+this function shoulded be used in case of reading not recording LiveData or recording Manually mode
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1848">
+<div class="content">
+<pre>@input:  none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1851">
+<h4 id="_ld_abs_get_numbersupporteditem">12.1.20. ld_abs_get_numbersupporteditem</h4>
+<div class="admonitionblock tip data-line-1852">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get number supported items of systems belong to ABS Group
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1854">
+<div class="content">
+<pre>@input:  none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1857">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1859">
+<div class="content">
+<pre>{
+      "Group":2, //ABS
+      "Number":100 // 100 Pids supported
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1864">
+<h4 id="_ld_srs_get_numbersupporteditem">12.1.21. ld_srs_get_numbersupporteditem</h4>
+<div class="admonitionblock tip data-line-1865">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get number supported items of systems belong to SRS Group
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1867">
+<div class="content">
+<pre>@input:  none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1870">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1872">
+<div class="content">
+<pre>{
+    "Group":4, //SRS
+    "Number":100
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1877">
+<h4 id="_ld_ecm_get_numbersupporteditem">12.1.22. ld_ecm_get_numbersupporteditem</h4>
+<div class="admonitionblock tip data-line-1878">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get number supported items of systems belong to ECM Group
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1880">
+<div class="content">
+<pre>@input:  none
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1883">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1885">
+<div class="content">
+<pre>{
+    "Group":16, //ECM PCM
+    "Number":100
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1890">
+<h4 id="_ld_system_subsystem_numbersupporteditem">12.1.23. ld_system_subsystem_numbersupporteditem</h4>
+<div class="admonitionblock tip data-line-1891">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get number supported items of systems belong to system and subsystem of module
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1893">
+<div class="content">
+<pre>@input:  system, subsystem --&gt; system enum value and subsystem  enum value
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1896">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1898">
+<div class="content">
+<pre>{
+    "Group":255, //group of system and subsystem belong to
+    "Number":100
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1903">
+<h4 id="_ld_abs_get_listinfo">12.1.24. ld_abs_get_listinfo</h4>
+<div class="admonitionblock tip data-line-1904">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list info with start and stop index of Group ABS
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1906">
+<div class="content">
+<pre>@input: start index, end index
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1909">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1911">
+<div class="content">
+<pre>{
+    "Group":2,
+    "ListItem":[
+        [1,ItemName, Max, Min, Unit],  //itemid (not index), item name, max, min and unit
+        [2,ItemName, Max, Min, Unit]
+    ]
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1919">
+<h4 id="_ld_ecm_get_listinfo">12.1.25. ld_ecm_get_listinfo</h4>
+<div class="admonitionblock tip data-line-1920">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list info with start and stop index of Group ECM
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1922">
+<div class="content">
+<pre>@input:  start index, end index
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1925">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1927">
+<div class="content">
+<pre>{
+    "Group":16,
+    "ListItem":[
+        [1,ItemName, Max, Min, Unit],  //itemid (not index), item name, max, min and unit
+        [2,ItemName, Max, Min, Unit]
+    ]
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1935">
+<h4 id="_ld_srs_get_listinfo">12.1.26. ld_srs_get_listinfo</h4>
+<div class="admonitionblock tip data-line-1936">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list info with start and stop index of Group SRS
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-1938">
+<div class="content">
+<pre>@input:  start index, end index
+@output: Promise&lt;{}&gt;</pre>
+</div>
+</div>
+<div class="paragraph data-line-1941">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1943">
+<div class="content">
+<pre>{
+    "Group":16, //hroup of system and subsystem belong to
+    "ListItem":[
+        [1,ItemName, Max, Min, Unit], //itemid (not index), item name, max, min and unit
+        [2,ItemName, Max, Min, Unit]
+    ]
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-1951">
+<h4 id="_ld_others_get_listinfo">12.1.27. ld_others_get_listinfo</h4>
+<div class="admonitionblock tip data-line-1952">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get list info with start and stop index of current module system
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-1954">
+<p>@input:  start index, end index
+@output: Promise&lt;{}&gt;</p>
+</div>
+<div class="paragraph data-line-1957">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-1959">
+<div class="content">
+<pre>{
+    "Group":255,
+    "ListItem":[
+        [1,ItemName, Max, Min, Unit], //itemid (not index), item name, max, min and unit
+        [2,ItemName, Max, Min, Unit]
+    ]
+}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-1969">
+<h2 id="_tool_setting">13. Tool Setting</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip data-line-1970">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Tool setting is stored in tootsetting_vci_0x1720.ts in common folder
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-1972">
+<p><em>Example:Features setting under format</em></p>
+</div>
+<div class="literalblock data-line-1974">
+<div class="content">
+<pre>{
+  //Features belongs to OBD2 SID1,2,37,5,6,7,8,9
+  'name':'OBD2', //string of feature
+  'enable':true, // already support in FW and vci-api
+  'Manufacturer':[ //list of manufacturers
+    'Generic', //Dont care Manufacturer
+  ]
+},</pre>
+</div>
+</div>
+<div class="literalblock data-line-1983">
+<div class="content">
+<pre>{
+  //Read / Erase DTC and Livedata for ABS system
+  'name':'ABS',
+  'enable':true,
+  'Manufacturer':[
+    'GM',
+    'Ford',
+    'Chrysler',
+    'Honda',
+    'Toyota',
+    'Nissan',
+    'Hyundai',
+    'Kia',
+    'BMW',
+    'Volkswagen',
+    'Audi',
+    'Mercedes-Benz',
+    'Volvo',
+    'Mazda',
+    'Subaru',
+    'Jaguar Land Rover'
+  ]
+},</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-2007">
+<h2 id="_usb_serial_and_bluetooth">14. USB Serial and Bluetooth</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip data-line-2008">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This part introduces the methods of USB serial and bluetooth serial
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note data-line-2011">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-2013">
+<p>install plugin serial.</p>
+</div>
+<div class="literalblock data-line-2015">
+<div class="content">
+<pre>ionic cordova plugin add cordovarduino
+npm install @ionic-native/serial</pre>
+</div>
+</div>
+<div class="paragraph data-line-2018">
+<p>install plugin bluetooth serial</p>
+</div>
+<div class="literalblock data-line-2020">
+<div class="content">
+<pre>ionic cordova plugin add cordova-plugin-bluetooth-serial
+npm install @ionic-native/bluetooth-serial</pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2 data-line-2024">
+<h3 id="_methods_8">14.1. Methods</h3>
+<div class="sect3 data-line-2026">
+<h4 id="_initialize">14.1.1. initialize</h4>
+<div class="admonitionblock tip data-line-2027">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function initializes the USB serial connection and register the notification
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-2029">
+<div class="content">
+<pre>@input:  {(NotifyDataType) =&gt; any} [cb=null] : register notify process
+@output: {Promise&lt;boolean&gt;}</pre>
+</div>
+</div>
+<div class="paragraph data-line-2033">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-2035">
+<div class="content">
+<pre>initialize((t) =&gt; {
+  // process notification here
+}).then(async isok =&gt; {
+  //isOK == true if initialize OK, otherwise there is not USB serial connection
+})</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-2041">
+<h4 id="_initialize_bt">14.1.2. initialize_bt</h4>
+<div class="admonitionblock tip data-line-2042">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function initializes the Bluetooth connection and register the notification
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-2044">
+<div class="content">
+<pre>@input:  {(NotifyDataType) =&gt; any} [cb=null] : register notify process
+@output: {Promise&lt;boolean&gt;}</pre>
+</div>
+</div>
+<div class="paragraph data-line-2047">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-2049">
+<div class="content">
+<pre>initialize_bt((t) =&gt; {
+  // process notification here
+}).then(async isok =&gt; {
+  //isOK == true if initialize OK, otherwise there is not support bluetooth
+})</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-2055">
+<h2 id="_data_logging">15. Data Logging</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip data-line-2056">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This part introduces the methods to start, stop and get VCI communication data between VCI and vehicle which is logged and stored in VCI.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2 data-line-2058">
+<h3 id="_methods_9">15.1. Methods</h3>
+<div class="sect3 data-line-2060">
+<h4 id="_startlog">15.1.1. StartLog</h4>
+<div class="admonitionblock tip data-line-2061">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to start VCI data logging, after calling this function VCI will start storing Vehicle data.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-2063">
+<div class="content">
+<pre>@input:  none
+@output: {Promise&lt;boolean&gt;}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-2066">
+<h4 id="_stoplog">15.1.2. StopLog</h4>
+<div class="admonitionblock tip data-line-2067">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to stop VCI data logging, after calling this function VCI will stop storing Vehicle data which started before.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-2069">
+<div class="content">
+<pre>@input:  none
+@output: {Promise&lt;boolean&gt;}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-2072">
+<h4 id="_getlog">15.1.3. GetLog</h4>
+<div class="admonitionblock tip data-line-2073">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to get the data of vehicle which is stored when calling start and stop function.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-2075">
+<div class="content">
+<pre>@input:  none
+@output: {Promise&lt;any&gt;}</pre>
+</div>
+</div>
+<div class="paragraph data-line-2078">
+<p><em>Example:</em></p>
+</div>
+<div class="literalblock data-line-2080">
+<div class="content">
+<pre>Get Log will return Logging data as the below. And we should save this data under json string.
+[{"index":0,"payload":[8,94,31,13,199,64,247,192,1,160,134,69,128,35,55,15,98,84,168,77,11,81,193,217,240,198,253,114,169,24,89,4,206,177,175,37,194,42,13,86,214,234,237,231,21,25,35,212,238,224,183,198,189,142,217,49,206,129,240,167,183,242,111,213,102,146,120,141,34,165,13,88,168,77,8,37,55,97,9,192,38,48,166,29,60,153,196,111,41,69,22,111,76,230,139,206,211,117,221,166,167,21,23,61,171,212,102,62,230,207,186,243,87,187,245,195,248,10,86,214,189,39,46,192,13,165,188,239,122,252,156,31,189,217,120,78,14,159,175,130,253,34,85,238,100,123,129,188,113,161,26,204,82,136,241,239,119,13,185,10,98,84,168,77,11,81,193,217,240,198,253,114,169,24,89,4,218,48,0,85,174,250,206,81,159,27,218,106,47,212,196,29,238,224,183,198,189,142,217,49,206,129,240,167,183,242,111,213,125,109,218,92,45,212,78,187,52,250,56,0,106,242,209,210,116,55,221,123,168,169,107,136,119,127,231,182,207,135,239,7,166,179,177,83,31,59,4,232,15,141,29,85,191,219,97,110,207,234,13,211,240,227,123,14,58,193,138,147,24,227,187,210,233,229,132,109,109,16,163,44,94,235,42,82,209,73,95,228,2,146,90,245,14,67,235,166,160,187,0,119,200,150,204,11,40,16,103,80,51,71,242,11,213,41,54,209,136,193,115,198,202,234,215,251,142,184,210,160,116,232,158,39,255,229,222,135,79,15,7,9,183,157,97,172,112,215,128,242,223,131,188,253,116,178,225,207,157,132,235,91,191,119,153,7,106,143,226,72,216,163,36,109,203,32,72,103,46,132,149,150,177,115,28,178,34,174,65,225,135,126,131,134,160,214,175,128,112,84,122,126,191,55,252,7,36,160,177,143,29,18,250,245,65,166,61,0,102,27,245,35,222,160,172,75,0,211,151,79,40,8,36,201,143,227,40,254,128,67,153,68,120,46,100,219,88,85,152,204,98,21,85,194,71,251,155,55,244,43,96,222,122,3,59,250,202,234,215,251,142,184,210,160,116,232,158,39,255,229,222,135,23,229,21,77,17,26,159,254,208,104,38,245,128,95,66,33,152,224,70,55,142,150,118,88,239,178,20,92,42,235,210,110,42,44,94,246,119,15,11,226,53,145,122,7,153,173,157,182,226,12,105,228,230,187,69,192,147,145,2,109,69,244,183,240,168,131,139,244,165,49,33,91,20,78,141,220,225,3,17,125,177,230,225,42,139,203,213,139,222,149,78,34,212,246,97,145,222,10,146,49,195,200,97,65,85,124,70,3,193,90,167,94,241,198,48,67,242,214,244,141,24,58,87,90,20,29,246,241,170,234,85,200,70,155,168,131,195,190,134,59,193,172,124,138,145,76,175,138,32,205,249,202,170,162,70,211,205,39,146,9,62,28,233,85,4,233,103,83,247,26,243,100,133,221,145,14,220,20,40,182,44,24,88,169,11,88,38,174,218,25,202,60,99,97,11,134,138,203,119,134,20,52,167,183,105,58,121,90,162,154,72,86,48,197,153,204,129,55,115,2,82,129,90,174,36,177,249,209,218,147,76,75,67,255,172,73,166,115,219,46,133,252,210,23,98,3,203,91,229,151,156,176,14,78,226,38,47,169,95,109,204,195,182,65,232,123,88,250,25,30,219,66,202,234,215,251,142,184,210,160,116,232,158,39,255,229,222,135,135,176,170,77,81,248,41,171,148,206,48,54,48,43,22,90,28,181,193,216,69,58,222,89,122,174,115,239,212,16,81,173,163,229,215,129,20,189,227,150,129,30,56,211,184,195,150,12,179]},{"index":1,"payload":[20,222,157,55,96,235,132,226,16,39,105,72,99,14,107,3,134,28,250,193,115,69,188,214,69,160,205,161,158,168,137,127,238,224,183,198,189,142,217,49,206,129,240,167,183,242,111,213,244,228,119,51,231,236,253,188,251,176,182,189,115,140,127,213,126,218,166,101,162,53,174,198,230,83,145,91,13,165,225,74,211,117,221,166,167,21,23,61,171,212,102,62,230,207,186,243,87,187,245,195,248,10,86,214,189,39,46,192,13,165,188,239,122,252,156,31,189,217,120,78,14,159,175,130,253,34,85,238,100,123,129,188,113,161,26,204,82,136,241,239,119,13,185,10,20,222,157,55,96,235,132,226,16,39,105,72,99,14,107,3,218,115,6,189,221,68,221,29,84,89,131,229,207,196,184,129,127,122,15,133,3,117,172,231,74,182,174,103,146,111,234,132,223,238,193,145,171,72,188,191,212,243,47,134,133,161,211,246,61,139,244,95,1,200,0,216,71,172,186,97,213,131,97,183,174,227,179,146,89,227,53,105,97,101,7,50,108,44,172,41,9,113,65,121,243,130,63,254,47,145,108,10,240,251,34,94,21,131,80,154,124,97,239,6,144,230,67,127,183,220,189,219,231,56,233,13,129,105,65,204,184,228,178,209,217,117,111,212,56,129,26,142,159,157,0,17,141,6,96,205,4,200,72,195,188,70,228,212,147,161,2,22,77,110,168,71,253,54,86,219,179,252,139,123,114,206,4,83,197,77,186,49,108,85,75,162,207,234,13,211,240,227,123,14,58,193,138,147,24,227,187,210,90,60,188,237,189,115,99,165,153,40,16,200,147,61,82,240,156,65,231,115,192,27,228,25,120,242,236,242,174,101,226,22,244,113,222,22,242,192,172,157,84,233,128,251,183,176,174,147,61,139,244,95,1,200,0,216,71,172,186,97,213,131,97,183,0,216,142,23,73,191,197,48,64,196,190,244,140,243,154,26,175,155,245,11,4,41,202,150,71,101,179,171,236,76,35,23,176,157,154,124,190,97,61,159,100,121,25,199,246,94,199,60,237,72,62,45,89,181,132,189,217,159,191,18,137,203,28,172,106,68,253,254,151,149,30,91,216,103,52,52,145,183,97,60,0,155,125,16,155,226,238,35,83,29,249,159,8,21,203,178,173,78,66,45,229,140,40,19,143,4,10,236,152,34,7,166,191,55,252,7,36,160,177,143,29,18,250,245,65,166,61,0,220,17,255,22,170,26,47,149,66,21,87,194,43,15,221,109,14,17,59,208,185,217,89,66,12,49,95,190,75,17,175,83,146,233,178,10,163,207,242,167,216,100,222,102,142,25,196,79,42,44,94,246,119,15,11,226,53,145,122,7,153,173,157,182,209,213,179,182,90,138,181,116,30,66,193,177,6,200,84,104,20,222,157,55,96,235,132,226,16,39,105,72,99,14,107,3,112,178,223,54,4,134,49,46,215,57,178,166,97,168,21,206,238,224,183,198,189,142,217,49,206,129,240,167,183,242,111,213,73,158,225,56,234,185,151,225,17,188,33,78,59,123,239,169,206,136,51,72,118,81,40,46,53,185,79,154,185,238,174,114,148,122,201,92,13,241,118,199,182,251,170,192,132,22,223,123,105,246,167,212,156,182,74,183,74,116,131,248,211,142,208,201,220,87,20,216,172,46,154,57,109,56,166,219,24,145,58,184,22,34,10,108,142,21,21,41,203,178,31,196,246,75,65,240,91,213,239,26,205,244,71,135,135,65,151,180,39,153,23,193,53,78,23,130,30,216,75,51,46,102,229,60,7,216,167,216,180,167,61,153,192,81,121,15,91,21,216,122,222,186,138,210,43]},{"index":2,"payload":[20,222,157,55,96,235,132,226,16,39,105,72,99,14,107,3,34,5,5,166,242,162,11,15,41,20,179,219,113,118,192,236,238,224,183,198,189,142,217,49,206,129,240,167,183,242,111,213,147,128,123,242,52,114,96,237,107,95,140,205,8,6,88,12,206,136,51,72,118,81,40,46,53,185,79,154,185,238,174,114,235,226,181,255,201,41,178,29,188,251,181,209,168,170,161,102,105,246,167,212,156,182,74,183,74,116,131,248,211,142,208,201,94,170,56,102,160,154,44,244,110,232,14,86,124,139,156,160,22,34,10,108,142,21,21,41,203,178,31,196,246,75,65,240,206,217,133,240,19,146,164,89,12,75,82,244,131,225,203,222,53,78,23,130,30,216,75,51,46,102,229,60,7,216,167,216,207,139,19,27,188,135,59,251,65,123,182,196,128,237,171,133,241,83,168,201,176,53,35,49,146,234,24,86,156,54,173,231,157,130,116,132,250,124,102,4,124,201,47,113,90,171,114,59,13,243,29,66,136,94,240,48,208,129,71,214,182,116,85,201,152,246,167,125,192,127,128,75,132,173,41,207,222,137,170,4,114,214,0,170,9,250,114,185,53,46,242,230,200,65,179,153,63,73,15,126,97,41,200,115,238,192,169,69,59,168,234,92,11,253,6,139,93,92,140,19,117,84,92,217,67,84,210,156,240,167,245,164,50,107,18,151,93,104,118,141,70,12,85,92,213,148,168,246,189,127,75,90,155,88,3,193,255,30,153,6,168,52,241,32,108,85,166,157,56,26,136,251,94,187,170,111,61,139,244,95,1,200,0,216,71,172,186,97,213,131,97,183,83,212,57,12,231,249,114,122,187,183,144,146,127,114,136,70,133,178,181,2,103,24,215,85,58,217,205,57,1,100,84,216,42,219,156,160,235,28,76,246,127,230,252,153,254,226,220,152,222,10,146,49,195,200,97,65,85,124,70,3,193,90,167,94,51,115,80,208,82,166,48,22,214,90,225,246,201,123,105,114,146,130,52,220,55,138,234,38,234,132,168,75,210,134,113,220,135,98,207,234,235,235,20,176,132,222,11,251,194,33,103,145,154,28,30,62,214,16,75,133,39,171,65,245,189,71,240,153,142,149,15,112,3,197,109,169,10,180,236,179,88,41,107,216,174,77,60,214,85,192,232,184,113,200,36,241,241,208,126,138,87,187,245,195,248,10,86,214,189,39,46,192,13,165,188,239,21,99,170,244,236,70,244,119,184,253,103,13,133,112,112,52,197,117,112,86,64,131,0,244,104,105,52,45,74,2,56,31,113,106,6,234,221,36,252,249,248,101,226,143,237,89,101,153,155,232,56,112,84,225,159,20,10,244,121,16,24,149,61,172,237,129,78,75,188,53,131,132,255,30,114,187,219,123,206,249,108,101,15,24,205,42,37,150,197,253,112,136,122,63,171,194,122,132,214,134,38,234,196,23,9,188,175,27,154,144,11,105,186,213,122,148,235,115,101,59,20,137,22,65,96,169,75,170,24,65,199,142,90,32,224,195,227,66,190,17,103,44,172,255,67,63,168,33,5,201,182,82,171,17,55,147,34,182,120,181,32,21,214,76,51,172,43,199,105,92,96,116,34,249,14,206,32,129,43,249,51,26,244,34,114,211,161,39,40,187,26,109,121,238,84,30,50,227,70,157,16,2,39,120,52,192,206,10,222,10,146,49,195,200,97,65,85,124,70,3,193,90,167,94,242,240,196,208,168,203,152,206,46,246,1,100,136,252,177,111,63,215,151,119,99,52,171,130,159,132,199,117,120,37,20,199,208]},{"index":3,"payload":[98,84,168,77,11,81,193,217,240,198,253,114,169,24,89,4,53,93,165,33,212,24,193,43,156,84,3,64,88,180,30,138,238,224,183,198,189,142,217,49,206,129,240,167,183,242,111,213,174,228,25,220,151,52,180,211,12,87,230,239,49,178,244,37,166,149,61,213,116,37,191,149,120,140,225,133,208,102,46,99,88,193,161,175,44,38,237,11,142,81,163,33,179,59,123,93,178,117,240,225,9,108,218,97,219,114,227,25,83,214,38,220,217,94,240,146,54,32,104,31,189,36,198,23,236,159,216,158,63,73,15,126,97,41,200,115,238,192,169,69,59,168,234,92,11,253,6,139,93,92,140,19,117,84,92,217,67,84,210,156,71,226,111,232,164,15,163,151,72,247,88,157,127,203,184,27,57,88,36,72,66,50,119,45,50,59,30,8,180,162,164,16,151,60,66,225,48,195,14,65,127,181,3,87,111,130,210,140,61,139,244,95,1,200,0,216,71,172,186,97,213,131,97,183,60,206,1,101,149,154,157,254,53,123,243,124,23,117,102,107,210,83,169,102,182,246,41,240,43,1,92,43,2,13,48,218,232,191,89,60,84,144,98,69,220,110,106,201,179,155,24,132,64,195,107,127,148,112,83,200,178,73,250,97,175,61,242,70,87,157,104,54,130,80,244,129,226,33,147,236,227,193,76,48,179,67,46,7,45,180,252,181,63,9,13,198,4,216,144,61,170,29,34,78,43,49,112,162,192,139,157,218,162,72,225,163,53,134,136,51,17,120,115,71,68,196,255,139,18,81,18,160,177,188,227,88,176,176,67,153,79,214,29,200,192,238,8,148,99,15,2,16,186,49,174,116,209,9,245,58,163,200,71,16,81,190,239,220,225,116,27,103,127,188,225,26,20,100,119,64,192,9,103,95,250,206,215,206,115,156,109,2,60,226,210,1,23]}]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-2083">
+<h2 id="_ymme">16. YMME</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-2085">
+<h3 id="_methods_10">16.1. Methods</h3>
+<div class="sect3 data-line-2087">
+<h4 id="_ymme_init">16.1.1. ymme_init</h4>
+<div class="admonitionblock tip data-line-2089">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to for the first initialization of YMME
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-2091">
+<div class="content">
+<pre>@input:  none
+@output: {Promise&lt;any&gt;}</pre>
+</div>
+</div>
+<div class="paragraph data-line-2094">
+<p><em>Example:The response of ymme_init is the list of year:</em></p>
+</div>
+<div class="literalblock data-line-2096">
+<div class="content">
+<pre>{
+  "vehinfo": "",
+  "field": "Select Year",
+  "options": [
+    "1996",
+    "1997",
+    "1998",
+    "1999",
+    "2000",
+    "2001",
+    "2002",
+    "2003",
+    "2004",
+    "2005",
+    "2006",
+    "2007",
+    "2008",
+    "2009",
+    "2010",
+    "2011",
+    "2012",
+    "2013",
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019"
+  ]
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-2127">
+<h4 id="_ymme_get">16.1.2. ymme_get</h4>
+<div class="admonitionblock tip data-line-2129">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used to set the id of user selection and get the next ymme list
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-2131">
+<div class="content">
+<pre>@input:  id of user selection
+@output: {Promise&lt;any&gt;}</pre>
+</div>
+</div>
+<div class="paragraph data-line-2135">
+<p><em>Example:Given the above year list, user selects 2019 we have return if ymme still need to be selected</em></p>
+</div>
+<div class="literalblock data-line-2137">
+<div class="content">
+<pre>{
+  "vehinfo": "2019 ",
+  "field": "Select Make",
+  "options": [
+    "Acura",
+    "Alfa Romeo(FCA)",
+    "Audi",
+    "BMW",
+    "Buick",
+    "Cadillac",
+    "Chevrolet",
+    "Chrysler",
+    "Daewoo",
+    "Dodge",
+    "Eagle",
+    "Fiat(FCA)",
+    "Ford",
+    "Geo",
+    "GMC",
+    "Honda",
+    "Hummer",
+    "Hyundai",
+    "Infiniti",
+    "Isuzu",
+    "Jaguar",
+    "Jeep",
+    "Kia",
+    "Land Rover",
+    "Lexus",
+    "Lincoln",
+    "Mazda",
+    "Mercedes-Benz",
+    "Mercury",
+    "Mini",
+    "Mitsubishi",
+    "Nissan",
+    "Oldsmobile",
+    "Plymouth",
+    "Pontiac",
+    "Porsche",
+    "Ram",
+    "Saab",
+    "Saturn",
+    "Scion",
+    "Smart",
+    "SRT",
+    "Subaru",
+    "Suzuki",
+    "Toyota",
+    "Volkswagen",
+    "Volvo",
+    "Not Listed"
+  ]
+}</pre>
+</div>
+</div>
+<div class="paragraph data-line-2193">
+<p><em>Otherwise, ymme selection is dont, need confirm the response will be</em></p>
+</div>
+<div class="literalblock data-line-2195">
+<div class="content">
+<pre>{
+  "vehinfo": "2019 BMW 2 Series 230i F22 L4, 2.0L (B46) Manual",
+  "field": "Done",
+  "options": []
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-2202">
+<h4 id="_ymme_confirm">16.1.3. ymme_confirm</h4>
+<div class="admonitionblock tip data-line-2204">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used when the response is "Done" and user confirm the current vehicle
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-2207">
+<div class="content">
+<pre>@input:  none
+@output: {Promise&lt;any&gt;}</pre>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-2210">
+<h4 id="_ymme_back">16.1.4. ymme_back</h4>
+<div class="admonitionblock tip data-line-2212">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+This function is used when user want to reselect the previous options. The return is the same structure as ymme_get and ymme_init
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock data-line-2214">
+<div class="content">
+<pre>@input:  none
+@output: {Promise&lt;any&gt;}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-06-22 12:02:42 +0700
+</div>
+</div>
+</body>
+</html>

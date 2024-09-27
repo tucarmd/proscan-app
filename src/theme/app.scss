@@ -1,0 +1,243 @@
+:root,
+html {
+    font-family: var(--app-font-family) !important;
+    --ion-font-family: var(--app-font-family) !important;
+    --ion-default-font: var(--app-font-family) !important;
+    font-weight: 400;
+    color: #000;
+}
+
+.app-content-padding {
+    --padding-top: var(--app-page-padding);
+    --padding-bottom: var(--app-page-padding);
+    --padding-start: var(--app-page-padding);
+    --padding-end: var(--app-page-padding);
+    padding: var(--app-page-padding);
+}
+.app-control-radius {
+    border-radius: var(--app-control-radius);
+}
+ul,
+ol {
+    list-style: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+a {
+    &[disabled] {
+        color: var(--ion-color-light-shade) !important;
+        pointer-events: none;
+    }
+}
+/*============================== text ==============================*/
+.text-primary {
+    color: var(--ion-color-primary) !important;
+}
+.text-secondary {
+    color: var(--ion-color-secondary) !important;
+}
+.text-success {
+    color: var(--ion-color-success) !important;
+}
+.text-dark-success {
+    color: var(--ion-color-dark-success) !important;
+}
+.text-warning {
+    color: var(--ion-color-warning) !important;
+}
+.text-danger {
+    color: var(--ion-color-danger) !important;
+}
+.text-dark-danger {
+    color: var(--app-color-dark-danger) !important;
+}
+.text-dark {
+    color: var(--ion-color-dark) !important;
+}
+.text-light {
+    color: var(--ion-color-light) !important;
+}
+.text-white {
+    color: #fff !important;
+}
+.text-black {
+    color: #000 !important;
+}
+.text-01 {
+    color: var(--app-color-01) !important;
+}
+.text-02 {
+    color: var(--app-color-02) !important;
+}
+.text-03 {
+    color: var(--app-color-03) !important;
+}
+.text-04 {
+    color: var(--app-color-04) !important;
+}
+.text-05 {
+    color: var(--app-color-05) !important;
+}
+.text-06 {
+    color: var(--app-color-06) !important;
+}
+.text-07 {
+    color: var(--app-color-07) !important;
+}
+.text-08 {
+    color: var(--app-color-08) !important;
+}
+.text-09 {
+    color: var(--app-color-09) !important;
+}
+.text-10 {
+    color: var(--app-color-10) !important;
+}
+.text-11 {
+    color: var(--app-color-11) !important;
+}
+.text-12 {
+    color: var(--app-color-12) !important;
+}
+.text-13 {
+    color: var(--app-color-13) !important;
+}
+.text-14 {
+    color: var(--app-color-14) !important;
+}
+.text-15 {
+    color: var(--app-color-15) !important;
+}
+.text-16 {
+    color: var(--app-color-16) !important;
+}
+.text-17 {
+    color: var(--app-color-17) !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.text-right {
+    text-align: right !important;
+}
+/*============================== background ==============================*/
+.bg-primary {
+    background-color: var(--ion-color-primary) !important;
+}
+.bg-secondary {
+    background-color: var(--ion-color-secondary) !important;
+    --background: var(--ion-color-secondary) !important;
+}
+.bg-success {
+    background-color: var(--ion-color-success) !important;
+}
+.bg-dark-success {
+    background-color: var(--ion-color-dark-success) !important;
+    --background: var(--ion-color-dark-success) !important;
+}
+.bg-warning {
+    background-color: var(--ion-color-warning) !important;
+}
+.bg-danger {
+    background-color: var(--ion-color-danger) !important;
+}
+.bg-dark-danger {
+    background-color: var(--app-color-dark-danger) !important;
+    --background: var(--ion-color-dark-danger) !important;
+}
+.bg-danger-tint {
+    background: var(--ion-color-danger-tint) !important;
+}
+.bg-dark {
+    background-color: var(--ion-color-dark) !important;
+}
+.bg-light {
+    background-color: var(--ion-color-light) !important;
+}
+.bg-01 {
+    background-color: var(--app-color-01) !important;
+    --background: var(--app-color-01) !important;
+}
+.bg-02 {
+    background-color: var(--app-color-02) !important;
+    --background: var(--app-color-02) !important;
+}
+.bg-03 {
+    background-color: var(--app-color-03) !important;
+    --background: var(--app-color-03) !important;
+}
+.bg-04 {
+    background-color: var(--app-color-04) !important;
+    --background: var(--app-color-04) !important;
+}
+.bg-05 {
+    background-color: var(--app-color-05) !important;
+    --background: var(--app-color-05) !important;
+}
+.bg-06 {
+    background-color: var(--app-color-06) !important;
+    --background: var(--app-color-06) !important;
+}
+.bg-07 {
+    background-color: var(--app-color-07) !important;
+    --background: var(--app-color-07) !important;
+}
+.bg-08 {
+    background-color: var(--app-color-08) !important;
+    --background: var(--app-color-08) !important;
+}
+.bg-09 {
+    background-color: var(--app-color-09) !important;
+    --background: var(--app-color-09) !important;
+}
+.bg-10 {
+    background-color: var(--app-color-10) !important;
+    --background: var(--app-color-10) !important;
+}
+.bg-11 {
+    background-color: var(--app-color-11) !important;
+    --background: var(--app-color-11) !important;
+}
+.bg-12 {
+    background-color: var(--app-color-12) !important;
+    --background: var(--app-color-12) !important;
+}
+.bg-13 {
+    background-color: var(--app-color-13) !important;
+    --background: var(--app-color-13) !important;
+}
+.bg-14 {
+    background-color: var(--app-color-14) !important;
+    --background: var(--app-color-14) !important;
+}
+.bg-15 {
+    background-color: var(--app-color-15) !important;
+    --background: var(--app-color-15) !important;
+}
+.bg-16 {
+    background-color: var(--app-color-16) !important;
+    --background: var(--app-color-16) !important;
+}
+.bg-17 {
+    background-color: var(--app-color-17) !important;
+    --background: var(--app-color-17) !important;
+}
+/* ------------------------------ */
+[color="white"] {
+    color: #fff !important;
+    --color: #fff !important;
+}
+[color="black"] {
+    color: #000 !important;
+    --color: #000 !important;
+}
+.center-h {
+    @include center-h--unk;
+}
+.text-bold {
+    font-weight: bold !important;
+}

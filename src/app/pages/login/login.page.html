@@ -1,0 +1,41 @@
+<ion-content class="ion-padding">
+
+  <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && doLogin($event)" class="app-content-center-midle">
+    <div class="w-100 px-3 " [ngClass]="{'mt--100': isKeyboardActive && isAndroid}">
+      <!-- app-open-keybroad-01 -->
+      <p class="app-form-logo">
+        <img src="assets/img/its-logo.png" alt="Innova Telematics Solutions" />
+      </p>
+      <div class="mb-4">
+        <ion-input class="app-input mb-2" type="email" placeholder="Email/Phone #" formControlName="email"></ion-input>
+        <div ion-text color="danger" *ngIf="formSubmitted && loginForm.controls.email.invalid">
+          <span class="text-danger" *ngIf="loginForm.controls.email.errors.required">Email/Phone # is required.</span>
+        </div>
+      </div>
+      <p class="mb-3">
+        <ion-input class="app-input mb-2" type="password" placeholder="Password" formControlName="password"
+          (keyup.enter)="loginForm.valid && doLogin($event)"></ion-input>
+      </p>
+      <span ion-text color="danger" *ngIf="formSubmitted && loginForm.controls.password.invalid">
+        <span class="text-danger" *ngIf="loginForm.controls.password.errors.required">Password is required.</span>
+      </span>
+      <br>
+      <span [hidden]="!errorMessage" class="text-danger">{{errorMessage}}</span>
+      <ion-item lines="none" class="ion-no-padding no-bg">
+        <ion-label class="ion-text-end font-size-18">Remember me</ion-label>
+        <ion-toggle slot="end" mode="ios" formControlName="rememberMe" (click)="hideKeyboard()"></ion-toggle>
+      </ion-item>
+      <p class="text-center mb-4 mt-0">
+        <a class="no-line font-size-16" (click)="goToForgotPassword()">Forgot Password?</a>
+      </p>
+
+      <ion-button class="app-button" expand="block" type="submit" [disabled]="isLoading" (click)="formSubmitted = true">
+        <ion-spinner [hidden]="!isLoading" class="app-sign-up-spinner"></ion-spinner>
+        <span [hidden]="isLoading" class="button-inner">Login</span>
+      </ion-button>
+      <p class="app-footer-logo">
+        <img src="assets/img/CarAi_logo.png" alt="Innova Telematics Solutions" />
+      </p>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md" *ngIf="isAndroid">
+    <ion-title>Tutorial</ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="ios" *ngIf="!isAndroid">
+    <ion-title>Tutorial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides
+    #slides
+    pager="true"
+    class="app-tutorial-slides"
+    (ionSlideDidChange)="slideChanged()"
+  >
+    <!-- STEP 01 -->
+    <ion-slide>
+      <img src="assets/img/tutorial/step-1.jpg" alt="" />
+      <p class="px-3 text-left">
+        Turn ignition to the ON position. Do not start the vehicle. Plug tool in to the DLC Port.
+      </p>
+    </ion-slide>
+    <!-- STEP 02 -->
+    <ion-slide>
+      <img src="assets/img/tutorial/step-2.jpg" alt="" />
+      <p class="px-3 text-left">Enter Mileage and select Start Scan</p>
+    </ion-slide>
+    <!-- STEP 03 -->
+    <ion-slide>
+      <img src="assets/img/tutorial/step-3.jpg" alt="" />
+      <p class="px-3 text-left">
+        If CarMD Pro Scan fails to automatically grab the VIN then scan the VIN
+      </p>
+    </ion-slide>
+    <!-- STEP 04 -->
+    <ion-slide>
+      <img src="assets/img/tutorial/step-4.jpg" alt="" />
+      <p class="px-3 text-left">Select tool if multiple are detected</p>
+    </ion-slide>
+    <!-- STEP 05 -->
+    <ion-slide>
+      <img src="assets/img/tutorial/step-5.jpg" alt="" />
+      <p class="px-3 text-left">
+        Tool will begin scanning vehicle. This process may take several minutes
+      </p>
+    </ion-slide>
+    <!-- STEP 06 -->
+    <ion-slide>
+      <img src="assets/img/tutorial/step-6.jpg" alt="" />
+      <p class="px-3 text-left">
+        The report summary can be viewed on the app. Here you will have the
+        option to erase all or individual codes. Your full report will be
+        available on the web portal
+      </p>
+    </ion-slide>
+    <!-- STEP 07 -->
+    <ion-slide>
+      <img src="assets/img/tutorial/step-7.jpg" alt="" />
+      <p class="px-3 text-left">
+        You can go back and view your complete or incomplete past reports
+        through the home screen by selecting Past Reports
+      </p>
+    </ion-slide>
+  </ion-slides>
+  <div (click)="skip()" class="app-swiper-footer-btn mb-4" style="z-index: 10" [hidden]="currentIndex === (totalSlides - 1)">
+    <a class="text-secondary">Skip</a>
+  </div>
+  <div (click)="closeTutorial()" class="app-swiper-footer-btn mb-4" style="z-index: 10" [hidden]="currentIndex !== (totalSlides - 1)">
+    <a class="text-secondary">Close Tutorial</a>
+  </div>
+</ion-content>

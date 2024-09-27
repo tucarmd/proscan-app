@@ -1,0 +1,58 @@
+/*27 Nov 2015*/
+-Updated CCD driver , => Effect on ASIC J1850 and CCD Protocol
+      Pretested , VPW , PWM and CCD can work properly , but tester need re-test carefully
+-CCD just work with new hardware as new design from a.Nguyen
+-Updated Protocol KIA ISO Box 131 , (It's never linked with all previous tool before)
+  => effect on Huyndai ISO (SRS box US-BOX-20)
+Command: Copy I:\IDev\API\Protocol\branches\Protocol_Dev to http://52.10.38.116/svn/EmbeddedDevelopment/Projects/OBD_Feature/Vehicle_Communication_API/Firmware/tags/Protocol_Dev_27Nov015_001, Revision HEAD  
+Committing transaction...:   
+Completed: At revision: 1419  
+Notice: Please note:  
+Notice: Your working copy remains on the previous path. If you want your next changes  
+Notice: to be committed to the copy or branch you have just created,  
+Notice: then you need to switch your working copy over to the new URL.  
+Notice: Use the Switch command to do that.  
+
+
+ 
+
+/*29 Oct 2015*/
+Command: Copy E:\OldSVN\ProtocolApi\branches\FW\NWSCAN_Dev to https://rdsvn.innova.com:8443/svn/OBDTool/OBDFeature/ProtocolApi/tags/FW/NWSCAN_Dev_Release_29Oct2015, Revision 6638  
+Completed: At revision: 6639  
+Notice: Please note:  
+Notice: Your working copy remains on the previous path. If you want your next changes  
+Notice: to be committed to the copy or branch you have just created,  
+Notice: then you need to switch your working copy over to the new URL.  
+Notice: Use the Switch command to do that.  
+
+
+/*20 Oct 2015*/
+Command: Copy E:\OldSVN\ProtocolApi\branches\FW\NWSCAN_Dev to https://rdsvn.innova.com:8443/svn/OBDTool/OBDFeature/ProtocolApi/tags/FW/NWSCAN_Dev_Release_20Oct2015, Revision HEAD
+Completed: At revision: 6629
+Notice: Please note:
+Notice: Your working copy remains on the previous path. If you want your next changes
+Notice: to be committed to the copy or branch you have just created,
+Notice: then you need to switch your working copy over to the new URL.
+Notice: Use the Switch command to do that.
+
+
+﻿/*16 Oct 2015*/
+Command: Copy E:\OldSVN\ProtocolApi\branches\FW\NWSCAN_Dev to https://rdsvn.innova.com:8443/svn/OBDTool/OBDFeature/ProtocolApi/tags/FW/NWSCAN_Dev_16Oct2015, Revision 6619
+Completed: At revision: 6620
+Notice: Please note:
+Notice: Your working copy remains on the previous path. If you want your next changes
+Notice: to be committed to the copy or branch you have just created,
+Notice: then you need to switch your working copy over to the new URL.
+Notice: Use the Switch command to do that.
+
+/*
+*11 Feb 2015 ,
+support ui with SD , integrate with ASIC OBD API
+*/
+Command: Copy D:\Master_Project\OBDTool\Protool\ProtocolApi\branches\FW\UI_NWSCAN to https://rdsvn.innova.com:8443/svn/OBDTool/OBDFeature/ProtocolApi/tags/FW/UI_NWSCAN_11Feb2015, Revision 6462
+Completed: At revision: 6463
+Notice: Please note:
+Notice: Your working copy remains on the previous path. If you want your next changes
+Notice: to be committed to the copy or branch you have just created,
+Notice: then you need to switch your working copy over to the new URL.
+Notice: Use the Switch command to do that.

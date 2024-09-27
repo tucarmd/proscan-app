@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="danger" mode="md" *ngIf="isAndroid">
+    <ion-title>Connection Failed</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="danger" mode="ios" *ngIf="!isAndroid">
+    <ion-title>Connection Failed</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="px-4 py-2 bg-01">
+    <p class="text-center"><img src="assets/img/no-dlc.jpg" style="max-height: 65vh;"/></p>
+    <h2>No device detected</h2>
+    <p class="text-light">Make sure the tool is connected to the vehicle's DLC, the key is turned to the run position (engine OFF), and Bluetooth is enabled on your phone or tablet.</p>
+  </div>
+  
+</ion-content>
+<ion-footer class="ion-no-border p-2">
+  <ion-toolbar class="py-1">
+    <p class="text-center font-size-18 mb-2" (click)="locateDlc()"><a>Locate DLC</a></p>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button class="app-button" expand="block" (click)="goHome()">Home</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="app-button" color="danger" expand="block" (click)="tryAgain()">Try Again</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

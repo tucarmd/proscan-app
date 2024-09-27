@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md" *ngIf="isAndroid">
+    <ion-title>Enter VIN</ion-title>
+    <ion-buttons slot="end" [hidden]="isModal">
+      <ion-button (click)="close()">
+        <ion-icon name="close-outline" class="font-size-28"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar mode="ios" *ngIf="!isAndroid">
+    <ion-title>Enter VIN</ion-title>
+    <ion-buttons slot="end" [hidden]="isModal">
+      <ion-button (click)="close()">
+        <ion-icon name="close-outline" class="font-size-28"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="app-content-center-midle">
+    <div class="w-100 app-open-keybroad-01" [formGroup]="vinForm">
+      <h4>VIN ({{vinLength}})</h4>
+      <p class="mb-3">
+        <ion-input (keyup.enter)="submit()" inputmode="text" maxlength="17" class="app-input vin-input" (ionChange)="vinChanges()" #vinInput placeholder="*****************"></ion-input>
+      </p>
+      <div class="mb-4 text-danger" [hidden]="!invalidVIN">
+        <span>VIN is required and must be 17 chars in length.</span>
+      </div>
+      <div class="mb-4 text-danger" [hidden]="!isVehiclesNotFound">
+        <span>Invalid VIN. Either this VIN is too new for our system, or our system cannot decode this VIN, or this VIN is invalid. Please enter a different VIN.</span>
+      </div>
+      <ion-button (click)="submit()" class="app-button mt-2" [disabled]="!hasVIN" expand="block">
+        <span [hidden]="isLoading">Submit</span>
+        <ion-spinner [hidden]="!isLoading"></ion-spinner>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

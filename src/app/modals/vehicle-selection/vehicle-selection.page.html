@@ -1,0 +1,89 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md" *ngIf="isAndroid">
+    <ion-title>Vehicle Selection</ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="ios" *ngIf="!isAndroid">
+    <ion-title>Vehicle Selection</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content scroll-y="false">
+  <div class="app-sp-font-12">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-input class="app-input font-size-18" placeholder="Year" value="{{ymme?.year}}" readonly></ion-input>
+        </ion-col>
+        <ion-col size="6">
+          <ion-input class="app-input font-size-18" placeholder="Make" value="{{ymme?.make}}" readonly></ion-input>
+        </ion-col>
+        <ion-col size="6">
+          <ion-input class="app-input font-size-18" placeholder="Model" value="{{ymme?.model}}" readonly></ion-input>
+        </ion-col>
+        <ion-col size="6">
+          <ion-input class="app-input font-size-18" placeholder="Engine" value="{{ymme?.engine}}" readonly></ion-input>
+        </ion-col>
+        <ion-col size="12" [hidden]="!(listOption1 && listOption1.length)">
+          <ion-input [(ngModel)]="option1" (click)="viewOptions(1)" class="app-input font-size-18 app-input-arrow" placeholder="Option 1" readonly>
+            <ion-icon name="caret-down-sharp" class="font-size-22 text-03" [hidden]="viewingOption1"></ion-icon>
+            <ion-icon name="caret-up-sharp" class="font-size-22 text-03" [hidden]="!viewingOption1"></ion-icon>
+          </ion-input>
+        </ion-col>
+        <ion-col size="12" [hidden]="!viewingOption1">
+          <ion-card style="margin: 0" *ngIf="options">
+            <ion-card-content>
+              <ion-list class="app-vehicle-select-list">
+                <ion-item *ngFor="let option of options; index as index" (click)="selectOption(index, option)">
+                  <ion-label>{{option.option}}</ion-label>
+                  <ion-buttons *ngIf="option.hasDetails"><ion-button class="text-black" (click)="viewOption(option)"><ion-icon name="information-circle-outline"></ion-icon></ion-button></ion-buttons>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" [hidden]="!(listOption2 && listOption2.length)">
+          <ion-input (click)="viewOptions(2)" class="app-input font-size-18 app-input-arrow" placeholder="Option 2" [(ngModel)]="option2" readonly>
+            <ion-icon name="caret-down-sharp" class="font-size-22 text-03" [hidden]="viewingOption2"></ion-icon>
+            <ion-icon name="caret-up-sharp" class="font-size-22 text-03" [hidden]="!viewingOption2"></ion-icon>
+          </ion-input>
+        </ion-col>
+        <ion-col size="12" [hidden]="!viewingOption2">
+          <ion-card style="margin: 0" *ngIf="options">
+            <ion-card-content>
+              <ion-list class="app-vehicle-select-list">
+                <ion-item *ngFor="let option of options; index as index" (click)="selectOption(index, option)">
+                  <ion-label>{{option.option}}</ion-label>
+                  <ion-buttons *ngIf="option.hasDetails"><ion-button class="text-black" (click)="viewOption(option)"><ion-icon name="information-circle-outline"></ion-icon></ion-button></ion-buttons>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" [hidden]="!(listOption3 && listOption3.length)">
+          <ion-input (click)="viewOptions(3)" class="app-input font-size-18 app-input-arrow" placeholder="Option 3" [(ngModel)]="option3" readonly>
+            <ion-icon name="caret-down-sharp" class="font-size-22 text-03" [hidden]="viewingOption3"></ion-icon>
+            <ion-icon name="caret-up-sharp" class="font-size-22 text-03" [hidden]="!viewingOption3"></ion-icon>
+          </ion-input>
+        </ion-col>
+        <ion-col size="12" [hidden]="!viewingOption3">
+          <ion-card style="margin: 0" *ngIf="options">
+            <ion-card-content>
+              <ion-list class="app-vehicle-select-list">
+                <ion-item *ngFor="let option of options; index as index" (click)="selectOption(index, option)">
+                  <ion-label>{{option.option}}</ion-label>
+                  <ion-buttons *ngIf="option.hasDetails"><ion-button class="text-black" (click)="viewOption(option)"><ion-icon name="information-circle-outline"></ion-icon></ion-button></ion-buttons>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border p-2">
+  <ion-toolbar class="py-1">
+    <p class="text-center">
+      <ion-button [disabled]="!couldSubmit" (click)="submit()" class="app-button">Continue</ion-button>
+    </p>
+  </ion-toolbar>
+</ion-footer>

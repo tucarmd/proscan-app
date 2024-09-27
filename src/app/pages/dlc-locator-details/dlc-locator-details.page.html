@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md" *ngIf="isAndroid">
+    <ion-title>DLC Locator</ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="ios" *ngIf="!isAndroid">
+    <ion-title>DLC Locator</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div>
+    <h4 class="text-center mb-4 pt-2">{{dlcLocationModel.year}} {{dlcLocationModel.make}} {{dlcLocationModel.model}}</h4>
+    <div class="bg-01 p-3 text-center no-line-height" >      
+      <img *ngIf="locationImageUrl" src="{{locationImageUrl}}" />
+    </div>
+    <div class="bg-01 p-3 text-center no-line-height" *ngIf="dlcLocationModel && dlcLocationModel.imageFileUrlSmall" >      
+      <!-- <img-loader *ngIf="dlcLocationModel.imageFileUrlSmall" src="{{dlcLocationModel.imageFileUrlSmall}}" fallbackUrl="/assets/img/empty.png" (useImg)="true"></img-loader> -->
+      <img *ngIf="locationImageUrl " src="{{dlcLocationModel.imageFileUrlSmall}}" onerror="this.style.display='none'"/>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="5" size-sm="3">Access:</ion-col>
+        <ion-col size="7" size-sm="9">{{dlcLocationModel.access}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5" size-sm="3">comments:</ion-col>
+        <ion-col size="7" size-sm="9"
+          >{{dlcLocationModel.comments}}</ion-col
+        >
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border p-2">
+  <ion-toolbar class="py-1">
+    <ion-button class="app-button" expand="block" (click)="closeClick()">Close</ion-button>
+  </ion-toolbar>
+</ion-footer>

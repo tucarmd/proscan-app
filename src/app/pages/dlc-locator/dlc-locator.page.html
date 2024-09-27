@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md" *ngIf="isAndroid">
+    <ion-title>DLC Locator</ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="ios" *ngIf="!isAndroid">
+    <ion-title>DLC Locator</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="mb-4">
+        <ion-select
+        class="app-select"
+        placeholder="Make"
+        [(ngModel)]="make"
+        (ionChange)="loadYears($event)"
+      >
+        <ion-select-option *ngFor="let m of makes" [value]="m"
+          >{{m}}</ion-select-option
+        >
+      </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="mb-4">
+        <ion-select
+        class="app-select"
+        placeholder="Year"
+        [disabled]="!make"
+        [(ngModel)]="year"
+        (ionChange)="loadModels($event)"
+      >
+        <ion-select-option *ngFor="let y of years" [value]="y"
+          >{{y}}</ion-select-option
+        >
+      </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="mb-5">
+        <ion-select
+        class="app-select"
+        placeholder="Model"
+        [disabled]="!make || !year"
+        [(ngModel)]="model"
+        (ionChange)="setModel($event)"
+      >
+        <ion-select-option *ngFor="let m of models" value="{{m}}"
+          >{{m}}</ion-select-option
+        >
+      </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="text-center">
+        <p class="mb-5">
+          <ion-button
+            class="app-button"
+            expand="block"
+            type="submit"
+            (click)="getDlcLocation()"
+            [disabled]="!(year != '' && make != '' && model != '')"
+            >Submit</ion-button
+          >
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row (click)="scanVin()">
+      <ion-col class="text-center mb-3"><a class="font-size-18">Scan VIN</a></ion-col>
+    </ion-row>
+    <ion-row (click)="cancel()">
+      <ion-col class="text-center"><a class="font-size-18 text-light">Cancel</a></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

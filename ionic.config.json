@@ -1,0 +1,8 @@
+{
+  "name": "proscan2-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "defaultBrowser": "google chrome"
+}

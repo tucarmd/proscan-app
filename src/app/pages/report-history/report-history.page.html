@@ -1,0 +1,88 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md" *ngIf="isAndroid">
+    <ion-title>Past Reports</ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="ios" *ngIf="!isAndroid">
+    <ion-title>Past Reports</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="p-2 bg-01 mb-4">
+    <ion-grid>
+      <h5 class="ps-1">Filter by Date</h5>
+
+      <ion-row>
+        <ion-col size="6" size-sm="6">
+          <!-- Date From start-->
+          <ion-item class="ion-no-padding app-mr" lines="none">
+            <div class="app-wrp-datetime">
+              <ion-input [value]="myDateFrom" placeholder="From"></ion-input>
+              <ion-button fill="clear" id="open-date-input-1">
+                <ion-icon icon="calendar"></ion-icon>
+              </ion-button>
+              <ion-popover mode="md" trigger="open-date-input-1" show-backdrop="true">
+                <ng-template>
+                  <ion-datetime mode="md" #popoverDatetime1 presentation="date" displayFormat="MM-DD-YYYY" min="2022" 
+                  (ionChange)="myDateFrom = formatDate($event);popoverDatetime1.confirm(true);filterByDate();" 
+                  cancelText='cancel' doneText='ok'>
+                  </ion-datetime>
+                </ng-template>
+              </ion-popover>
+            </div>
+          </ion-item>
+        </ion-col>
+        <!-- Date From start-->
+        <ion-col size="6" size-sm="6">
+          <ion-item class="ion-no-padding" lines="none">
+            <div class="app-wrp-datetime">
+              <ion-input [value]="myDateTo" placeholder="To"></ion-input>
+              <ion-button fill="clear" id="open-date-input-2">
+                <ion-icon icon="calendar"></ion-icon>
+              </ion-button>
+              <ion-popover mode="md" trigger="open-date-input-2" show-backdrop="true">
+                <ng-template>
+                  <ion-datetime mode="md" #popoverDatetime2 presentation="date" displayFormat="MM-DD-YYYY" min="2022"
+                   (ionChange)="myDateTo = formatDate($event);popoverDatetime2.confirm(true);filterByDate();" cancelText='cancel' doneText='ok'>
+                  </ion-datetime>
+                </ng-template>
+              </ion-popover>
+            </div>
+          </ion-item>
+        </ion-col>
+        <!-- Date From end-->
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="app-sp-font-12 bg-01">
+    <table class="app-table text-left">
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Vehicle</th>
+        <th>Status</th>
+      </tr>
+      <tr [hidden]="!isLoading">
+        <td colspan="4" style="text-align: center;">
+          <ion-spinner></ion-spinner>
+        </td>
+      </tr>
+      <tr [hidden]="isLoading" *ngFor="let report of filteredReports | paginate: { itemsPerPage: 5, currentPage: page }">
+        <td>{{report.reportNumber}}</td>
+        <td>{{report.createdDate}}</td>
+        <td><a class="no-line" (click)="viewDetails(report.id)">{{report.ymme}}</a></td>
+        <td>
+          <span class="incomplete-report" *ngIf="report.status === 1">Incomplete</span>
+          <span class="complete-report" *ngIf="report.status !== 1">Complete</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="filteredReports && filteredReports.length > 0" [hidden]="isLoading" class="app-pagination pt-3">
+    <pagination-controls [maxSize]="5" (pageChange)="page = $event"></pagination-controls>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border p-2">
+  <ion-toolbar class="py-1">
+    <ion-button class="app-button" expand="block" (click)="goBack()">Back</ion-button>
+  </ion-toolbar>
+</ion-footer>

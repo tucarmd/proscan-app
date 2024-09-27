@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-title>{{toolName}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()" color="tertiary">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content scroll-y="false">
+  <div class="app-sp-font-12">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <p class="app-poppins-semi-bold my-1">
+            Enter new Tool Name here:
+          </p>
+        </ion-col>
+        <ion-col size="12">
+          <ion-input inputmode="text" [(ngModel)]="newName" maxlength="15" class="app-input" #nameInput
+            (ionChange)="newNameChanges()" (keyup.enter)="couldConfirm && confirm()"></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <div *ngIf="!meetRequiredCriteria">
+            <span ion-text class="text-danger">
+              The entered name must not: <br />
+              - Exceed 15 characters <br />
+              - Have any spaces
+            </span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border p-1">
+  <ion-toolbar class="py-0">
+    <p class="text-center">
+      <ion-button [disabled]="!couldConfirm" (click)="confirm()" class="app-button">Confirm</ion-button>
+    </p>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,20 @@
+{
+  "name": "iobd",
+  "version": "1.16RC6",
+  "contributors": [
+    {
+      "name": "Quoc Do",
+      "email": "quocmd@vn.innova.com"
+    },
+    {
+      "name": "Nguyen Pham",
+      "email": "nguyencp@vn.innova.com"
+    }
+  ],
+  "devDependencies": {
+    "buffer": "^5.2.1",
+    "lodash": "^4.17.11",
+    "@ionic-native/serial": "^5.3.0",
+    "@ionic-native/bluetooth-serial": "^5.15.0"
+  }
+}

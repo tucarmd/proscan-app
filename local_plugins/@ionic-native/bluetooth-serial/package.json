@@ -1,0 +1,55 @@
+{
+  "_args": [
+    [
+      "@ionic-native/bluetooth-serial@5.26.0",
+      "/Users/dev02/Projects/CarMD.Mobile.InnovaTablet/trunk/Source/InnovaTablet"
+    ]
+  ],
+  "_from": "@ionic-native/bluetooth-serial@5.26.0",
+  "_id": "@ionic-native/bluetooth-serial@5.26.0",
+  "_inBundle": false,
+  "_integrity": "sha512-t2uUKm8tOKzhFgqdzcRYt4Nfg5YxFPHT/jz5k8lJ5ZRTisaAur+UB3p8Hdgpn9+FylEGMuMl7qh8/nY4eQkFbg==",
+  "_location": "/@ionic-native/bluetooth-serial",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ionic-native/bluetooth-serial@5.26.0",
+    "name": "@ionic-native/bluetooth-serial",
+    "escapedName": "@ionic-native%2fbluetooth-serial",
+    "scope": "@ionic-native",
+    "rawSpec": "5.26.0",
+    "saveSpec": null,
+    "fetchSpec": "5.26.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ionic-native/bluetooth-serial/-/bluetooth-serial-5.26.0.tgz",
+  "_spec": "5.26.0",
+  "_where": "/Users/dev02/Projects/CarMD.Mobile.InnovaTablet/trunk/Source/InnovaTablet",
+  "author": {
+    "name": "ionic"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/ionic-native/issues"
+  },
+  "dependencies": {
+    "@types/cordova": "latest"
+  },
+  "description": "Ionic Native - Native plugins for ionic apps",
+  "homepage": "https://github.com/ionic-team/ionic-native#readme",
+  "license": "MIT",
+  "module": "index.js",
+  "name": "@ionic-native/bluetooth-serial",
+  "peerDependencies": {
+    "rxjs": "^5.5.0 || ^6.5.0",
+    "@ionic-native/core": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/ionic-native.git"
+  },
+  "typings": "index.d.ts",
+  "version": "5.26.0"
+}
