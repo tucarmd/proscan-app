@@ -26,6 +26,10 @@
     "cordova-plugin-email-composer": {
       "PACKAGE_NAME": "com.carmd.proscan2"
     },
+    "cordova-plugin-file": {
+      "ANDROIDX_WEBKIT_VERSION": "1.4.0",
+      "PACKAGE_NAME": "com.carmd.proscan2"
+    },
     "cordova-plugin-insomnia": {
       "PACKAGE_NAME": "com.carmd.proscan2"
     },
@@ -36,9 +40,6 @@
       "PACKAGE_NAME": "com.carmd.proscan2"
     },
     "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "com.carmd.proscan2"
-    },
-    "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "com.carmd.proscan2"
     },
     "cordova-plugin-statusbar": {

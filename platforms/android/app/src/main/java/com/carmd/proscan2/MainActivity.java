@@ -20,6 +20,7 @@
 package com.carmd.proscan2;
 
 import android.os.Bundle;
+
 import org.apache.cordova.*;
 
 public class MainActivity extends CordovaActivity

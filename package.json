@@ -80,7 +80,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
-    "cordova-android": "^10.1.2",
+    "cordova-android": "^13.0.0",
     "cordova-open-native-settings": "^1.5.5",
     "cordova-plugin-app-version": "^0.1.14",
     "cordova-plugin-ble-central": "1.7.2",
